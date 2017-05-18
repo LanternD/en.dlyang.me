@@ -1,2 +1,5 @@
-# en.dlyang.me
-Repo for the English site.
+# Theme
+
+Theme originally comes from (Kejin's blog)[https://liungkejin.github.io]
+
+> Enjoy.

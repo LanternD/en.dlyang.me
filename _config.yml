@@ -1,0 +1,45 @@
+# Site settings
+title: LanternD's Castle
+author: LanternD
+description: MSU
+avatar: /assets/img/avatar.png
+favicon: /assets/img/favicon.ico
+baseurl: 
+url: https://en.dlyang.me/
+rss_url: /feed.xml
+
+disqus:
+  shortname: dlyang-en
+
+
+gems:
+  - jekyll-sitemap
+  - jekyll-paginate
+
+paginate: 15
+permalink: /:title
+
+# Build settings
+
+# highlight: true
+highlighter: rouge
+
+timezone: America/Detroit
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  smart_quotes: lsquo,rsquo,ldquo,rdquo
+  enable_coderay: false
+
+  coderay:
+    coderay_wrap: div
+    coderay_line_numbers: inline
+    coderay_line_numbers_start: 1
+    coderay_tab_width: 4
+    coderay_bold_every: 10
+    coderay_css: style
