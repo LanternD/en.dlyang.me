@@ -225,3 +225,206 @@ div.authorimage {
     font-family: "Open Sans Condensed", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L",sans-serif;
     margin-top: 40px;
 }
+
+
+.footer-navi {
+    text-align:right;
+    margin-right:1%;
+    margin-bottom:-43px;
+    margin-top: 22px;
+}
+.footer-navi a{
+    color:#808080;
+    text-decoration: none;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.btn-primary{
+    background-color: #ccd8e2;
+}
+
+div.back-top {
+    display: block;
+    width: 45px;height: 34px;
+    border-radius: 4px;
+    position:fixed;right:15px;bottom:20px;
+    background-color:#fafafa;
+}
+
+/*Pagination CSS*/
+
+.pagination { 
+    display: block;
+    height: 89px;
+    margin-top: 10px;
+    margin-bottom: 20px; 
+    margin-left: 2%
+}
+.pagination .prev, .pagination .next {
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: #f5f5f5;
+    display: inline-block;
+    padding: 2px 5px 2px 5px;
+}
+.pagination ul {margin-left: -8%;}
+.pagination .prev{float: left;}
+.pagination .next{
+    float: right;
+    margin-right: 0%;
+}
+.pagination a:hover{text-decoration:none;}
+.pagination .disabled {
+    background-color: #ed8a8a;
+    border-radius: 10px;
+    font-size: 14px;
+    display: inline-block;
+    padding: 2px 5px 2px 5px;
+    margin-bottom: 10px;
+}
+
+/*Pagination at Index of the site*/
+
+.index-pagination {
+    display: block;
+    height: 65px;
+    width: 90%;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    margin-left: 2%;
+    padding-bottom: 30px;
+}
+
+.index-pagination .prev, .index-pagination .next {
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: #cdcdcd;
+    display: inline-block;
+    padding: 4px 10px 4px 10px;
+}
+
+.index-pagination ul {
+    margin-left: 14%;
+    display: inline-block;
+    width: 100%;
+}
+
+.index-pagination .prev{
+    margin-right: 3%;
+}
+
+.index-pagination .page .current-page{
+    background-color: #898989;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 4px 10px 4px 10px;
+    margin-bottom: 10px;
+}
+
+.index-pagination .page{
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    font-size: 20px;
+    display: inline-block;
+    padding: 4px 10px 4px 10px;
+    margin-bottom: 10px;
+    margin-right: 2%;
+}
+
+.index-pagination .next{
+    /*float: right;*/
+    /*margin-left: 3%;*/
+    display: inline-block;
+}
+
+.index-pagination a:hover{
+    text-decoration:none;
+}
+
+.index-pagination .disabled {
+    background-color: #ed8a8a;
+    border-radius: 10px;
+    font-size: 20px;
+    display: inline-block;
+    padding: 4px 10px 4px 10px;
+    margin-bottom: 10px;
+    margin-right: 2%;
+    margin-left: 1%;
+}
+
+@media screen and (max-width: 1025px){
+    .index-pagination ul {
+        margin-left: 5%;
+        display: inline-block;
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 750px){
+    .index-pagination{
+        width: 100%;
+        margin-left: 4%;
+    }
+
+    .index-pagination .page ul{width: 95%;}
+
+    .index-pagination .page .prev{margin-left: 0%;}
+    .index-pagination .page, .index-pagination .prev, .index-pagination .next{
+        display: inline-block;
+        padding: 2px 7px 2px 4px;
+        font-size: 18px;
+    }
+    .index-pagination .page .current-page{
+        display: inline-block;
+        padding: 0px 5px 0px 5px;
+        font-size: 18px;
+        margin-bottom: 0px;
+    }
+    .index-pagination .page{margin-right: 2%;}
+    .index-pagination .disabled {font-size: 18px;margin-right: 2%;margin-left: 1%;padding: 2px 7px 2px 4px;}
+}
+
+
+/*Comment css*/
+
+#disqus_container {font-size:14px;margin-bottom: 10px;margin-top: 5px;}
+#disqus_container a.comment {font-size:18px; background: transparent;}
+#disqus_container span.comment-count {font-size:18px; color: #4A75B5;}
+
+/*Tag cloud css*/
+
+li.listing-item {
+    margin-left: 3%;
+
+}
+
+#tag_could {
+    width: 90%;
+    margin: 40px 0 40px;
+    margin-left: 5%;
+    line-height: 2em;
+
+}
+
+#tag_cloud a {text-decoration: none;}
+#tag_cloud a:hover {text-decoration: none;}
