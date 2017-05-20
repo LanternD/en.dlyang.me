@@ -4,3 +4,4 @@ _site/
 resumecard.iml
 /*.iml
 .jekyll-metadata
+*.jekyll-metadata
