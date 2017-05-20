@@ -9,7 +9,7 @@
     function toggleDisqusComments(container){
         if(jQuery(container).has("iframe").length>0){
             var iframe_id = $(container+" iframe").attr("id");
-            jQuery(container+" iframe#"+iframe_id).toggle();
+            jQuery(container+" iframe#"+iframe_id).slideToggle();
             return;
         }
         (function() { // DON'T EDIT BELOW THIS LINE

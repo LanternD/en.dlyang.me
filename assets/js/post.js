@@ -225,10 +225,4 @@ $(document).ready(function(){
           $('html, body').animate({ scrollTop: 0 }, 500);
     });
 
-    $('#disqus_container .comment').on('click',function(){
-        $(this).html('Loading...'); 
-        var that = this;
-        BYB.includeScript('https://' + '{{ site.disqus.shortname }}' + '.disqus.com/embed.js', function(){$(that).remove()}); //这是一个加载js的函数
-    });
-
 });
