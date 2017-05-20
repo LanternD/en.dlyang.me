@@ -10,7 +10,7 @@ id: tags
 
 <div id='tag_cloud' style="width:90%;margin:30px 0px 30px 5%;line-height:2em;">
   {% for tag in site.tags reversed%}
-  <a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}"> {{ tag[0] }} </a>
+  <a href="#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">{{ tag[0] }}</a>
   {% endfor %}
 </div>
 
@@ -26,8 +26,8 @@ id: tags
   {% endfor %}
 </ul>
 
-<script src="/js/jquery-1.7.1.min.js" type="text/javascript" charset="utf-8"></script> 
-<script src="/js/jquery.tagcloud.js" type="text/javascript" charset="utf-8"></script>
+<script src="/assets/js/jquery.min.js" type="text/javascript" charset="utf-8"></script> 
+<script src="/assets/js/jquery.tagcloud.js" type="text/javascript" charset="utf-8"></script>
 
 <script language="javascript">
     $.fn.tagcloud.defaults = {

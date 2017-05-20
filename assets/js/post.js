@@ -37,7 +37,7 @@ $(document).ready(function(){
     });
 
     (function(){
-        var ie6 = ($.browser.msie && $.browser.version=="6.0") ? true : false;
+        // var ie6 = ($.browser.msie && $.browser.version=="6.0") ? true : false;
 
         function initHeading(){
             var h2 = [];
@@ -119,7 +119,7 @@ $(document).ready(function(){
             };
         })();
 
-        if($('.entry h2').length > 2 && !isMobile.any() && !ie6){
+        if($('.entry h2').length > 2 && !isMobile.any()){
 
             genIndex();
 
@@ -223,6 +223,12 @@ $(document).ready(function(){
       // 点击按钮后，滚动条的垂直方向的值逐渐变为0，也就是滑动向上的效果
     $('div.back-top').click(function() {
           $('html, body').animate({ scrollTop: 0 }, 500);
+    });
+
+    $('#disqus_container .comment').on('click',function(){
+        $(this).html('Loading...'); 
+        var that = this;
+        BYB.includeScript('https://' + '{{ site.disqus.shortname }}' + '.disqus.com/embed.js', function(){$(that).remove()}); //这是一个加载js的函数
     });
 
 });
