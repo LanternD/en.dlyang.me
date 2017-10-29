@@ -1,7 +1,7 @@
 ---
 layout: post
 title: STT 861 Theory of Prob and STT I Lecture Note - 8
-description: a.
+description: Proof of the biased sample mean; Example 3.5.3 in the text book; Normal distribution, joint normal distribution (multivariate), Gamma distribution.
 permalink: /stt-861-lecture-note-8/
 categories: [blog]
 tags: [course, probability, statistics, lecture, note, MSU]
@@ -19,6 +19,8 @@ I will add this after I finished everything.
 ## For video record
 
 (This part is similar to previous note. We recorded a video for it so the professor talked about it once again.)
+
+Basically it is the prove that sample variance $\hat{\sigma}^2=\frac{1}{n}\sum_{i=1}^{n}(x_i-\bar{x})^2$ biased. 
 
 Recall, 
 

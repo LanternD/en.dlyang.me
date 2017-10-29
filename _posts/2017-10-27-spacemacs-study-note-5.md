@@ -9,8 +9,7 @@ date: 2017-10-27 22:34:56
 ---
 
 
-Highlight parenthesis within the bracket
-========================================
+# Highlight parenthesis within the bracket
 
 -   Code snippet:
 
@@ -28,12 +27,10 @@ Highlight parenthesis within the bracket
 -   `cond`: condition, similar to switch-case.
 
 
-Towards web development
-=======================
+# Towards web development
 
 
-DOS EOL processing
-------------------
+## DOS EOL processing
 
 -   DOS line break exists in some web pages, they appear as `^M` in Unix OS. We need to eliminate them first.
 -   Option 1, hide them:
@@ -58,8 +55,7 @@ DOS EOL processing
 -   This is an example showing how to scan the whole document and make some changes.
 
 
-Deal with the toggle of the web-mode
-------------------------------------
+## Deal with the toggle of the web-mode
 
 ```emacs-lisp
 ;; Configuration for web-mode
@@ -90,8 +86,7 @@ Deal with the toggle of the web-mode
 ```
 
 
-Use js2-refactor to increase the development efficiency
--------------------------------------------------------
+## Use js2-refactor to increase the development efficiency
 
 -   `package-install <ret> js2-refactor`
 
@@ -108,12 +103,10 @@ Use js2-refactor to increase the development efficiency
 -   Read the doc for more detail! It is useful.
 
 
-Improve some built-in modes
-===========================
+# Improve some built-in modes
 
 
-Occur-mode
-----------
+## Occur-mode
 
 -   Find a word with regular expression.
 -   `M-s o`: enter a regexp to find in in the buffer. Similar to search using swiper. But occur can do both forward and backward serach.
@@ -139,28 +132,24 @@ Occur-mode
 -   In the occur-mode window, press `e` can also enter occur-edit mode.
 
 
-imenu-mode
-----------
+## imenu-mode
 
 -   show all the functions in the current buffer.
 -   However the default one is not convenient, use `counsel-imenu` instead.
 -   Bind a key `M-s i` to it. Use regular expression to improve it.
 
 
-Expand-region and iedit-mode (Pretty useful)
-============================================
+# Expand-region and iedit-mode (Pretty useful)
 
 
-expand-region
--------------
+## expand-region
 
 -   `(requre 'expand-region)`
 -   `(global-set-key (kbd "c-=") 'er/expand-region)`
 -   Repeatly use `C-=` or `C--` to change the scope of selection.
 
 
-iedit-mode
-----------
+## iedit-mode
 
 -   multiple selection and edit them simutaneously.
 -   `M-x iedit-mode <ret>`
@@ -168,7 +157,6 @@ iedit-mode
 -   change the iedit occurence from "highlight" to "region".
 
 
-Export in Org-mode
-==================
+# Export in Org-mode
 
 -   `C-c C-e`: pop up window to choose the output selection.
