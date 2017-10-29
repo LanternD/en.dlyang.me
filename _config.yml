@@ -35,9 +35,10 @@ kramdown:
   enable_coderay: false
 
   syntax_highlighter_opts:
+    css_class: 'highlight'
     wrap: div
-    line_numbers: inline
+    line_numbers: false
     line_numbers_start: 1
-    tab_width: 4
+    tab_width: 2
     bold_every: 10
     css: style
