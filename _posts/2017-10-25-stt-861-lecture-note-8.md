@@ -155,7 +155,7 @@ Moral of the story: the class of normal r.v.'s is stable by linear combination.
 
 ## Example 1
 
-let $X\sim N(1,1)$, $Y\sim N(0,4)$, $Z\sim N(-2,1)$. Assume they are independent. $V=2X+3+Y-4Z$. Find $E(X)$, $Var(X)$.
+let $X\sim N(1,1)$, $Y\sim N(0,4)$, $Z\sim N(-2,1)$. Assume they are independent. $V=2X+3+Y-4Z$. Find $E(V)$, $Var(V)$.
 
 A: By the above moral, $V$ should be normal.
 
