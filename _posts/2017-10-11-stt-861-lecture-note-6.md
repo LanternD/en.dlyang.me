@@ -61,7 +61,7 @@ Vocabulary: (2) is called **independence of increments**. And (1) is usually cal
 
 **Remark**: $N(t)+N(s)$ does not $\sim P(\lambda (t+s))$.
 
-What is $N(t)+N(s)$? $=N(t)-N(s)\sim Poi(\lambda(t-s))+2Poi(\lambda s)$
+What is $N(t)+N(s)$? $=N(t)+N(s)\sim Poi(\lambda(t-s))+2Poi(\lambda s)$
 
 $2Poi(\lambda s)$ is not $Poi(2\lambda s)$. They might have different variance.
 
