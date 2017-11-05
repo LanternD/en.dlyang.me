@@ -1,7 +1,7 @@
 ---
 layout: post
 title: STT 861 Theory of Prob and STT I Lecture Note - 9
-description: .
+description: Review of the important concepts of previous section; moment generation function; Gamma distribution, chi-square distribution.
 permalink: /stt-861-lecture-note-9/
 categories: [blog]
 tags: [course, probability, statistics, lecture, note, MSU]
