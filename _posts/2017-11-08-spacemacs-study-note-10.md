@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Spacemacs Rocks Note Day 10
+description: A series of notes that I learn Emacs hacking. More on cask and use-package, more on company-mode, backends, group-backends, how to write your own backend.
 permalink: /spacemacs-study-note-10/
 categories: [blog]
 tags: [spacemacs, emacs, lecture, note, hacking]
