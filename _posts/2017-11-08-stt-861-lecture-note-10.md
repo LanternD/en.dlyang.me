@@ -1,7 +1,7 @@
 ---
 layout: post
 title: STT 861 Theory of Prob and STT I Lecture Note - 10
-description: .
+description: Solving a problem in midterm exam; conditional distribution, definition, example and its expectation and variance.
 permalink: /stt-861-lecture-note-10/
 categories: [blog]
 tags: [course, probability, statistics, lecture, note, MSU]
