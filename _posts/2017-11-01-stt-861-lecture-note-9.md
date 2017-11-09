@@ -27,7 +27,7 @@ Possible outcomes: $A_1,A_2,...,A_n$.
 
 Model for each $A_i$: $P(A_i)$ given. This is the "prior" model.
 
-Model for each relation between $A_i$ and $B$: $P(B|A_i)$. This is the "likelihood" model. 
+Model for each relation between $A_i$ and $B$: $P(B\|A_i)$. This is the "likelihood" model. 
 
 **Theorem**:
 
