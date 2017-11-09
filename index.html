@@ -2,7 +2,7 @@
 layout: blog
 ---
 
-{% for post in site.posts %}
+{% for post in paginator.posts limit:15 %}
 <article class="preview">
     <header>
         <h2 class="post-title">
@@ -18,3 +18,5 @@ layout: blog
 
 </article>
 {% endfor %}
+
+{% include page-index.html %}
