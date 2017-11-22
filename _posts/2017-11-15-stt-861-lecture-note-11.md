@@ -1,7 +1,7 @@
 ---
 layout: post
 title: STT 861 Theory of Prob and STT I Lecture Note - 11
-description: . 
+description: Proof of the "Tower" property; discrete conditional distribution; continuous conditional distribution expectation and variance and their examples; linear predictor and mean squared error.
 permalink: /stt-861-lecture-note-11/
 categories: [blog]
 tags: [course, probability, statistics, lecture, note, MSU]
