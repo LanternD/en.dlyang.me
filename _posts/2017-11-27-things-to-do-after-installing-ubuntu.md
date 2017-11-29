@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Thinks to Do After Installing Ubuntu
+title: Things to Do After Installing Ubuntu
 description: A quick note. It includes installing packages and configuring the system.
 permalink: /things-to-do-after-installing-ubuntu/
 categories: [blog]
