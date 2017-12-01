@@ -18,9 +18,26 @@ Add `sudo` if needed.
 
 `apt install git`
 
+-   Global settings
+    -   `git config --global user.name "LanternD"`
+    -   `git config --global user.email the_email@gmail.com`
+    -   `git config --global core.editor emacs`
+
 ### Chrome
 
 Of cause.
+
+### pyenv
+
+[Pyenv/pyenv - GitHub](https://github.com/pyenv/pyenv)
+
+Don't forget the add `PATH` and `eval` stuff to the `.bashrc` (Step 3 in the installation tutorial).
+
+After the installation, **use `pyenv` to install certain python version**.
+
+`python global 3.6.x`
+
+Get ride of every annoying version selection between Python 2.7.x and 3.6.x.
 
 ### pip
 
@@ -44,7 +61,7 @@ In Ubuntu `Settings`, enter `Online Accounts`, and add `Google` account. After a
 
 **Update**: the above method is not convenient. Use `Grive2` instead. [Grive2 - Github](https://github.com/vitalif/grive2)
 
-Just follow the instructions. Remember to add the `.griveignore` file before running `-grive -a` command.
+Just follow the instructions. Remember to add the `.griveignore` file before running `grive -a` command.
 
 ### LaTeX environment
 
@@ -78,6 +95,52 @@ Tutorial: [WhatPulse Linux Installation](http://help.whatpulse.org/kb/client/lin
 
 Optional.
 
+### Zotero
+
+-   [Installation guide](https://www.zotero.org/support/installation)
+-   Zotfile: [Link](http://zotfile.com/)
+
+### Sogou Pinyin Input Method
+
+Tutorial: [Sogou Pinyin Official Help](https://pinyin.sogou.com/linux/help.php)
+
+-   Make sure `fcitx` is installed.
+-   Enter `im-config` in terminal, set the corresponding items.
+-   Install Sogou Pinyin via the `.deb` package.
+-   Let `fcitx` start after loging-in. Use `gnome-tweaks-tool` to do so.
+
+### ag
+
+Tutorial: [the\_silver\_searcher - Github](https://github.com/ggreer/the_silver_searcher)
+
+A fast code searching tool.
+
+`apt-get install silversearcher-ag`
+
+### PostgreSQL
+
+Tutorial: [How to Install PostgreSQL 10 on Ubuntu 16.04 and 14.04 LTS](https://tecadmin.net/install-postgresql-server-on-ubuntu/)
+
+-   Installation
+
+Add the Apt Repo to source list in Ubuntu and then sudo install.
+
+`sudo apt-get install postgresql postgresql-contrib`
+
+Python use `psycopg2` to manipulate the PostgreSQL database. Do not forget to install it as well.
+
+`pip install psycopg2`
+
+-   Setting user info
+
+Tutorial: [Setting a password for the `postgres` user](http://suite.opengeo.org/docs/latest/dataadmin/pgGettingStarted/firstconnect.html#setting-a-password-for-the-postgres-user)
+
+Use `psql` command and `\password` command to do so.
+
+### pgAdmin
+
+A python-written program that manage PostgreSQL. Install it using python wheel. Use python in system (not those in pyenv) to install. This app requires `sudo` permission to run.
+
 ## Remove Unused Folders in `Home`
 
 Tutorial: [Ubuntu - permanently remove ~/Videos and ~/Public](https://superuser.com/questions/223918/ubuntu-permanently-remove-videos-and-public)
@@ -99,6 +162,7 @@ Font list:
 -   Source Code Pro
 -   Operator
 -   Fira Code
+-   icon font (see `NeoTree` Github page)
 -   Chinese fonts
 
 ## Emacs Configuration
