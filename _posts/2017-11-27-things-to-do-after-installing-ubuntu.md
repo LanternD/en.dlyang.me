@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Things to Do After Installing Ubuntu
-description: A quick note. It includes installing packages and configuring the system.
+title: Thinks to Do After Installing Ubuntu 17.10
+description: A quick note. It includes installing packages and configuring the system. Most of the stuff works for other Ubuntu versions as well.
 permalink: /things-to-do-after-installing-ubuntu/
 categories: [blog]
 tags: [linux, system, OS, ubuntu]
@@ -23,6 +23,18 @@ Add `sudo` if needed.
     -   `git config --global user.email the_email@gmail.com`
     -   `git config --global core.editor emacs`
 
+### Curl
+
+`apt install curl`
+
+### Zsh (Z shell)
+
+`apt-get install zsh`
+
+Follows by `oh-my-zsh` ([Github Link](https://github.com/robbyrussell/oh-my-zsh)).
+
+`sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
+
 ### Chrome
 
 Of cause.
@@ -30,6 +42,10 @@ Of cause.
 ### pyenv
 
 [Pyenv/pyenv - GitHub](https://github.com/pyenv/pyenv)
+
+-   Install the required packages first. See [here](https://github.com/pyenv/pyenv/wiki/Common-build-problems).
+
+> `sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \ libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \ xz-utils tk-dev`
 
 Don't forget the add `PATH` and `eval` stuff to the `.bashrc` (Step 3 in the installation tutorial).
 
@@ -89,6 +105,10 @@ The packages in ruby:
     -   Run `bundle install` after `bundler` is installed.
     -   `bundle exec jekyll serve`.
 
+### cmake
+
+Simply `apt install cmake`.
+
 ### WhatPulse
 
 Tutorial: [WhatPulse Linux Installation](http://help.whatpulse.org/kb/client/linux-installation)
@@ -137,6 +157,8 @@ Tutorial: [Setting a password for the `postgres` user](http://suite.opengeo.org/
 
 Use `psql` command and `\password` command to do so.
 
+Update: it would be less painful to create a new role (user) and use it to create a database.
+
 ### pgAdmin
 
 A python-written program that manage PostgreSQL. Install it using python wheel. Use python in system (not those in pyenv) to install. This app requires `sudo` permission to run.
@@ -149,7 +171,7 @@ Change the following:
 
 -   `~/.config/user-dirs.dirs`.
 -   `/etc/xdg/user-dirs.conf`: `enabled=False`.
--   `/etc/xdg/user-dirs.conf`.
+-   `/etc/xdg/user-dirs.defaults`.
 
 Then we can `rmdir` those folders.
 
@@ -168,10 +190,52 @@ Font list:
 ## Emacs Configuration
 
 1.  First `git clone` the `.emacs.d` to `~` directory.
-2.  Use symbolic link to create `~/.spacemacs.d` folder.
+2.  Use symbolic link to create `~/.spacemacs.d` folder. `ln -s ~/.emacs.d/.spacemascs.d ~/.spacemacs.d`
 
 ## Replace `Caps Lock` by `Ctrl`
 
 Tutorial: [MovingTheCtrlKey - EmacsWiki](https://www.emacswiki.org/emacs/MovingTheCtrlKey)
 
 Install `GNOME Tweaks` and changes the settings: `Keyboard & Mouse` -> `Additional Layout Options` -> `Caps Lock key behavior` -> `Caps Lock is also a Ctrl`.
+
+## Connect from Remote Computers
+
+Use `VNC Viewer`. Download, install, login, done. Google Remote Desktop somewhat does not support Ubuntu 17.10.
+
+## Gnome Extensions
+
+-   We can find plenty of extensions from the official Gnome website:
+
+[Gnome Extensions](https://extensions.gnome.org/)
+
+-   Some of the helpful ones:
+    -   system-monitor (there is a hyphen in the word). Need to install `gir` dependencies before installing this extensions.
+
+## Remove Redundent Icons and Softwares
+
+-   Amazon Link in the docker
+
+`sudo rm -f /usr/share/applications/com.canonical.launcher.amazon.desktop` `sudo rm -f /usr/share/applications/ubuntu-amazon-default.desktop`
+
+-   Firefox browser
+
+`sudo apt-get autoremove firefox firefox-locale-en`
+
+## Beautify the UI
+
+-   Install `chrome-gnome-shell` first:
+    -   `apt install chrome-gnome-shell`
+
+-   Theme:
+
+[`Ant` Theme](https://www.gnome-look.org/p/1099856/)
+
+-   Icons theme:
+
+[Papirus Icons](https://www.gnome-look.org/p/1166289/)
+
+-   Use `ocs-install` to install them.
+
+-   Set the theme in `Gnome-tweak-tool`, the one used in setting the Caps Lock key.
+
+-   `User themes`: an extension that changes **shell** themes from user directory.
