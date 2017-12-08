@@ -10,9 +10,20 @@ date: 2017-10-25 20:35:32
 
 # Portal to all the other notes
 
-You would encounter a 404 error if I haven't taken the lecture. :-)
-
-I will add this after I finished everything.
+- [Lecture 01 - 2017.09.06](/stt-861-lecture-note-1/) 
+- [Lecture 02 - 2017.09.13](/stt-861-lecture-note-2/)
+- [Lecture 03 - 2017.09.20](/stt-861-lecture-note-3/)
+- [Lecture 04 - 2017.09.27](/stt-861-lecture-note-4/)
+- [Lecture 05 - 2017.10.04](/stt-861-lecture-note-5/)
+- [Lecture 06 - 2017.10.11](/stt-861-lecture-note-6/)
+- [Lecture 07 - 2017.10.18](/stt-861-lecture-note-7/)
+- [Lecture 08 - 2017.10.25](/stt-861-lecture-note-8/) -> This post
+- [Lecture 09 - 2017.11.01](/stt-861-lecture-note-9/)
+- [Lecture 10 - 2017.11.08](/stt-861-lecture-note-10/)
+- [Lecture 11 - 2017.11.15](/stt-861-lecture-note-11/)
+- [Lecture 12 - 2017.11.20](/stt-861-lecture-note-12/)
+- [Lecture 13 - 2017.11.29](/stt-861-lecture-note-13/)
+- [Lecture 14 - 2017.12.06](/stt-861-lecture-note-14/)
 
 # Lecture 08 - Oct 25 2017
 
