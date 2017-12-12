@@ -195,7 +195,7 @@ trials?
 $ X_i \sim Bernoulli(p) $ i.i.d. For example, $ X_i=1 $ vote for Dr. Jill
 Stein (or Gary Johnson), $ X_i = 0$ otherwise. 
 
-$ P=P(X_i=1] $ is small. What if $ p=\lambda n $ where $ n $ is the \# of
+$ P=P(X_i=1) $ is small. What if $ p=\lambda n $ where $ n $ is the \# of
 trials?
 
 Then $ Y_n=X_1+X_2+\cdots + X_n, Y\sim Bin (n,p) $,
@@ -203,9 +203,9 @@ Then $ Y_n=X_1+X_2+\cdots + X_n, Y\sim Bin (n,p) $,
 $$ E(Y_n) = np=\lambda $$
 
 Since average \# of successes is constant $ \lambda $ then $ Bin(n,p)\approx
-Poisson(\lambda $. Range $ 0.2 \leq \lambda \leq 10 $.
+Poisson(\lambda) $. Range $ 0.2 \leq \lambda \leq 10 $.
 
-Note: $ Var(Y_n)=np(1-p) = \lambda(1-\frac{\lambda}{n}\approx\lambda $. If $
+Note: $ Var(Y_n)=np(1-p) = \lambda(1-\frac{\lambda}{n}) \approx\lambda $. If $
 p=\frac{\lambda}{n}+O(\frac{1}{n}) $ then $ Bin(n,p) \approx Poisson(\lambda)
 $ still holds.
 
