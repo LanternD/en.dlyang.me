@@ -10,6 +10,10 @@ date: 2017-11-27 16:34:56
 
 # 　
 
+## TL;DR
+
+`sudo apt install git emacs25 vim texlive-full python-apt python-pip python3-pip curl zsh ruby-full cmake silversearcher-ag postgresql postgresql-contrib`
+
 ## Package and Software to Install
 
 Add `sudo` if needed.
@@ -45,7 +49,7 @@ Of cause.
 
 -   Install the required packages first. See [here](https://github.com/pyenv/pyenv/wiki/Common-build-problems).
 
-> `sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \ libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \ xz-utils tk-dev`
+> `sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesservice cups restart5-dev libncursesw5-dev xz-utils tk-dev`
 
 Don't forget the add `PATH` and `eval` stuff to the `.bashrc` (Step 3 in the installation tutorial).
 
@@ -161,7 +165,18 @@ Update: it would be less painful to create a new role (user) and use it to creat
 
 ### pgAdmin
 
-A python-written program that manage PostgreSQL. Install it using python wheel. Use python in system (not those in pyenv) to install. This app requires `sudo` permission to run.
+A python-written program that manage PostgreSQL. Install it using python wheel. Use python in system (not those in `pyenv`) to install. This app requires `sudo` permission to run.
+
+### GNU Radio
+
+Use `pybombs` to install it. It will take care of UHD at the same time.
+
+## GitHub SSH key
+
+Follow the instructions on these two posts:
+
+-   [Generating a new SSH key and adding it to the ssh-agent](https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/)
+-   [Adding a new SSH key to your GitHub account](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
 
 ## Remove Unused Folders in `Home`
 
@@ -184,7 +199,7 @@ Font list:
 -   Source Code Pro
 -   Operator
 -   Fira Code
--   icon font (see `NeoTree` Github page)
+-   icon font (see `NeoTree` GitHub page)
 -   Chinese fonts
 
 ## Emacs Configuration
@@ -210,8 +225,9 @@ Use `VNC Viewer`. Download, install, login, done. Google Remote Desktop somewhat
 
 -   Some of the helpful ones:
     -   system-monitor (there is a hyphen in the word). Need to install `gir` dependencies before installing this extensions.
+        -   `apt install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0`
 
-## Remove Redundent Icons and Softwares
+## Remove Redundant Icons and Softwares
 
 -   Amazon Link in the docker
 
@@ -226,16 +242,25 @@ Use `VNC Viewer`. Download, install, login, done. Google Remote Desktop somewhat
 -   Install `chrome-gnome-shell` first:
     -   `apt install chrome-gnome-shell`
 
--   Theme:
+-   Theme: [`Ant` Theme](https://www.gnome-look.org/p/1099856/)
 
-[`Ant` Theme](https://www.gnome-look.org/p/1099856/)
+-   Use `ocs-url` to install them.
 
--   Icons theme:
-
-[Papirus Icons](https://www.gnome-look.org/p/1166289/)
-
--   Use `ocs-install` to install them.
+-   Icons theme: [Papirus Icons](https://www.gnome-look.org/p/1166289/)
 
 -   Set the theme in `Gnome-tweak-tool`, the one used in setting the Caps Lock key.
 
 -   `User themes`: an extension that changes **shell** themes from user directory.
+
+## Enable `vim` in `sudo` mode
+
+`alias svim="sudo -E vim"`
+
+## Disable Auto Printer Discovery
+
+Tutorial: [How do I disable automatic remote printer installation?](https://askubuntu.com/a/556963)
+
+-   `svim /etc/cups/cups-browsed.conf`
+-   Add (uncomment) this line: `BrowseProtocols none`
+-   `sudo service cups-browsed restart`
+-   `sudo service cups restart`
