@@ -75,11 +75,15 @@ Get ride of every annoying version selection between Python 2.7.x and 3.6.x.
 
 Use the client provided by Dropbox
 
-### Google Drive
+### -Google Drive-
 
-In Ubuntu `Settings`, enter `Online Accounts`, and add `Google` account. After a while, the files in Google Drive will be synchonized as a mounted folder.
+**Update**: I don't use Google Drive anymore because it doesn't officially support Linux.
 
-**Update**: the above method is not convenient. Use `Grive2` instead. [Grive2 - Github](https://github.com/vitalif/grive2)
+Bad solution: In Ubuntu `Settings`, enter `Online Accounts`, and add `Google` account. After a while, the files in Google Drive will be synchonized as a mounted folder.
+
+Better solution: the above method is not convenient. Use `Grive2` instead.
+
+-   [Grive2 - Github](https://github.com/vitalif/grive2)
 
 Just follow the instructions. Remember to add the `.griveignore` file before running `grive -a` command.
 
@@ -169,7 +173,16 @@ A python-written program that manage PostgreSQL. Install it using python wheel. 
 
 ### GNU Radio
 
-Use `pybombs` to install it. It will take care of UHD at the same time.
+Tutorials: [GNURadio - GitHub](https://github.com/gnuradio/gnuradio#pybombs)
+
+Follow the instruction. Use `pybombs` to install it. It will take care of UHD at the same time.
+
+### Powerline
+
+-   Official site: [powerline/powerline - GitHub](https://github.com/powerline/powerline)
+-   Installation: [powerline - readthedocs.io](https://powerline.readthedocs.io/en/latest/installation.html)
+
+`pip install powerline-status`
 
 ## GitHub SSH key
 
@@ -226,6 +239,8 @@ Use `VNC Viewer`. Download, install, login, done. Google Remote Desktop somewhat
 -   Some of the helpful ones:
     -   system-monitor (there is a hyphen in the word). Need to install `gir` dependencies before installing this extensions.
         -   `apt install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0`
+    -   `openweather`: A plugin for the live weather conditions.
+    -   `User themes`: an extension that changes **shell** themes from user directory.
 
 ## Remove Redundant Icons and Softwares
 
@@ -239,18 +254,33 @@ Use `VNC Viewer`. Download, install, login, done. Google Remote Desktop somewhat
 
 ## Beautify the UI
 
+### Theme
+
 -   Install `chrome-gnome-shell` first:
     -   `apt install chrome-gnome-shell`
 
 -   Theme: [`Ant` Theme](https://www.gnome-look.org/p/1099856/)
 
--   Use `ocs-url` to install them.
+### Icons
+
+-   Use `ocs-url` to install them (install `osc-url` [here](https://www.linux-apps.com/p/1136805/)).
 
 -   Icons theme: [Papirus Icons](https://www.gnome-look.org/p/1166289/)
 
--   Set the theme in `Gnome-tweak-tool`, the one used in setting the Caps Lock key.
+-   Set the theme and icons in `Gnome-tweak-tool`, the one used in setting the Caps Lock key.
 
--   `User themes`: an extension that changes **shell** themes from user directory.
+-   Change folder icons:
+    -   Tutorial: [Custom icon selection - AskUbuntu](https://askubuntu.com/questions/79110/how-can-i-assign-custom-icons-to-folders)
+    -   Key point: the custom icons are in `~/.local/share/icons/`. The default icons are in `/usr/share/icons/`.
+    -   Open the properties window for the folder, click the icon and select.
+    -   Change the following: Download, Github, Dropbox etc.
+
+### ZSH themes
+
+Most of the work is done by synchronizing the `.oh-my-zsh` folder and `.zshrc` file via Dropbox, the rest things we can do is:
+
+-   Install powerline fonts. [powerline/fonts - GitHub](https://github.com/powerline/fonts)
+-   Install the powerline plugin.
 
 ## Enable `vim` in `sudo` mode
 
