@@ -145,6 +145,12 @@ A fast code searching tool.
 
 `apt-get install silversearcher-ag`
 
+### autojump
+
+`agi autojump`
+
+(after adding `ubuntu` plugins in `zsh`, we will have `alias agi="sudo apt-get install`.)
+
 ### PostgreSQL
 
 Tutorial: [How to Install PostgreSQL 10 on Ubuntu 16.04 and 14.04 LTS](https://tecadmin.net/install-postgresql-server-on-ubuntu/)
@@ -294,3 +300,25 @@ Tutorial: [How do I disable automatic remote printer installation?](https://asku
 -   Add (uncomment) this line: `BrowseProtocols none`
 -   `sudo service cups-browsed restart`
 -   `sudo service cups restart`
+
+## SSH timeout settings
+
+Prevent the disconnection due to keyboard inactive.
+
+Link: [解决SSH自动断线，无响应的问题](<https://www.coder4.com/archives/3751>)
+
+```sh
+sudo vim /etc/ssh/ssh_config
+# Add or uncomment the following code at client side
+ServerAliveInterval 20
+ServerAliveCountMax 999
+```
+
+And
+
+```sh
+sudo vim /etc/ssh/sshd_config
+# Uncomment the following code at server side 
+ClientAliveInterval 30
+ClientAliveCountMax 6
+```
