@@ -12,7 +12,7 @@ date: 2017-11-27 16:34:56
 
 ## TL;DR
 
-`sudo apt install git emacs25 vim texlive-full python-apt python-pip python3-pip curl zsh ruby-full cmake silversearcher-ag postgresql postgresql-contrib`
+`sudo apt install git emacs25 vim texlive-full python-apt python-pip python3-pip curl zsh ruby-full cmake silversearcher-ag autojump gir1.2-gtop-2.0 gir1.2-networkmanager-1.0`
 
 ## Package and Software to Install
 
@@ -50,6 +50,10 @@ Of cause.
 -   Install the required packages first. See [here](https://github.com/pyenv/pyenv/wiki/Common-build-problems).
 
 > `sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesservice cups restart5-dev libncursesw5-dev xz-utils tk-dev`
+
+-   Install `pyenv` through the official installation script in[ this link](https://github.com/pyenv/pyenv-installer).
+
+> curl -L <https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer> | bash
 
 Don't forget the add `PATH` and `eval` stuff to the `.bashrc` (Step 3 in the installation tutorial).
 
@@ -224,7 +228,7 @@ Font list:
 ## Emacs Configuration
 
 1.  First `git clone` the `.emacs.d` to `~` directory.
-2.  Use symbolic link to create `~/.spacemacs.d` folder. `ln -s ~/.emacs.d/.spacemascs.d ~/.spacemacs.d`
+2.  Use symbolic link to create `~/.spacemacs.d` folder. `ln -s ~/.emacs.d/.spacemacs.d ~/.spacemacs.d`
 
 ## Replace `Caps Lock` by `Ctrl`
 
@@ -243,10 +247,12 @@ Use `VNC Viewer`. Download, install, login, done. Google Remote Desktop somewhat
 [Gnome Extensions](https://extensions.gnome.org/)
 
 -   Some of the helpful ones:
-    -   system-monitor (there is a hyphen in the word). Need to install `gir` dependencies before installing this extensions.
-        -   `apt install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0`
-    -   `openweather`: A plugin for the live weather conditions.
-    -   `User themes`: an extension that changes **shell** themes from user directory.
+    -   `system-monitor` (there is a hyphen in the word). Need to install `gir` dependencies before installing this extensions.
+
+> `apt install gir1.2-gtop-2.0 gir1.2-networkmanager-1.0`
+
+-   `OpenWeather`: A plugin for the live weather conditions.
+-   `User themes`: an extension that changes **shell** themes from user directory.
 
 ## Remove Redundant Icons and Softwares
 
@@ -260,6 +266,8 @@ Use `VNC Viewer`. Download, install, login, done. Google Remote Desktop somewhat
 
 ## Beautify the UI
 
+-   Use `ocs-url` to install them (install `osc-url` [here](https://www.linux-apps.com/p/1136805/)).
+
 ### Theme
 
 -   Install `chrome-gnome-shell` first:
@@ -269,8 +277,6 @@ Use `VNC Viewer`. Download, install, login, done. Google Remote Desktop somewhat
 
 ### Icons
 
--   Use `ocs-url` to install them (install `osc-url` [here](https://www.linux-apps.com/p/1136805/)).
-
 -   Icons theme: [Papirus Icons](https://www.gnome-look.org/p/1166289/)
 
 -   Set the theme and icons in `Gnome-tweak-tool`, the one used in setting the Caps Lock key.
@@ -279,7 +285,7 @@ Use `VNC Viewer`. Download, install, login, done. Google Remote Desktop somewhat
     -   Tutorial: [Custom icon selection - AskUbuntu](https://askubuntu.com/questions/79110/how-can-i-assign-custom-icons-to-folders)
     -   Key point: the custom icons are in `~/.local/share/icons/`. The default icons are in `/usr/share/icons/`.
     -   Open the properties window for the folder, click the icon and select.
-    -   Change the following: Download, Github, Dropbox etc.
+    -   Change the following: Downloads, Github, Dropbox etc.
 
 ### ZSH themes
 
@@ -322,3 +328,5 @@ sudo vim /etc/ssh/sshd_config
 ClientAliveInterval 30
 ClientAliveCountMax 6
 ```
+
+(Sometimes this file is not there.)
