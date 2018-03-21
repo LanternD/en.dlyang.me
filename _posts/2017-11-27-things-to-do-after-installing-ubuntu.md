@@ -217,8 +217,8 @@ An programming IDE provided by Microsoft. [Link](https://code.visualstudio.com/d
 
 ## Install via `ppa`
 
--   `[[http://kicad-pcb.org/download/ubuntu/][KiCad]]`
--   `[[https://github.com/Nuand/bladeRF/wiki/Getting-Started%253A-Linux#Easy_installation_for_Ubuntu_The_bladeRF_PPA][bladeRF]]`
+-   [KiCad](http://kicad-pcb.org/download/ubuntu/)
+-   [bladeRF](https://github.com/Nuand/bladeRF/wiki/Getting-Started%253A-Linux#Easy_installation_for_Ubuntu_The_bladeRF_PPA)
 
 # Settings
 
@@ -243,7 +243,7 @@ Then we can `rmdir` those folders.
 
 ## Replace `Caps Lock` by `Ctrl`
 
-Tutorial: [MovingTheCtrlKey - EmacsWiki](https://www.emacswiki.org/emacs/MovingTheCtrlKey)
+**Tutorial**: [MovingTheCtrlKey - EmacsWiki](https://www.emacswiki.org/emacs/MovingTheCtrlKey)
 
 Install `GNOME Tweaks` and changes the settings: `Keyboard & Mouse` -> `Additional Layout Options` -> `Caps Lock key behavior` -> `Caps Lock is also a Ctrl`.
 
@@ -288,7 +288,7 @@ ClientAliveCountMax 6
 
 ## Add Fonts
 
-Tutorial: [How To Install New Fonts In Ubuntu 14.04 and 16.04](https://itsfoss.com/install-fonts-ubuntu-1404-1410/)
+**Tutorial**: [How To Install New Fonts In Ubuntu 14.04 and 16.04](https://itsfoss.com/install-fonts-ubuntu-1404-1410/)
 
 Font list:
 
@@ -316,7 +316,9 @@ Font list:
 
 -   Amazon Link in the docker
 
-`sudo rm -f /usr/share/applications/com.canonical.launcher.amazon.desktop` `sudo rm -f /usr/share/applications/ubuntu-amazon-default.desktop`
+`sudo rm -f /usr/share/applications/com.canonical.launcher.amazon.desktop`
+
+`sudo rm -f /usr/share/applications/ubuntu-amazon-default.desktop`
 
 -   Firefox browser
 
