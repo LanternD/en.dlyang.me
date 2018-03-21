@@ -44,15 +44,15 @@ Follows by `oh-my-zsh` ([Official Github Link](https://github.com/robbyrussell/o
 
 ### pyenv
 
-[Pyenv/pyenv - GitHub](https://github.com/pyenv/pyenv)
+Link: [Pyenv/pyenv - GitHub](https://github.com/pyenv/pyenv)
 
 -   Install the required packages first. See [here](https://github.com/pyenv/pyenv/wiki/Common-build-problems).
 
-> `sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesservice cups restart5-dev libncursesw5-dev xz-utils tk-dev`
+`sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesservice cups restart5-dev libncursesw5-dev xz-utils tk-dev`
 
 -   Install `pyenv` through the official installation script in [this link](https://github.com/pyenv/pyenv-installer).
 
-> `curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer \| bash`
+`curl -L https://raw.githubusercontent.com/pyenv/pyenv-installer/master/bin/pyenv-installer \| bash`
 
 Don't forget the add `PATH` and `eval` stuff to the `.bashrc` or `.zshrc` (Step 3 in the installation tutorial).
 
@@ -84,9 +84,9 @@ Get ride of every annoying version selection between Python 2.7.x and 3.6.x.
 Official site: [Linux Repositories](https://www.sublimetext.com/docs/3/linux_repositories.html#apt)
 
 ```sh
-wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg \| sudo apt-key add -
+wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 sudo apt-get install apt-transport-https
-echo "deb https://download.sublimetext.com/ apt/stable/" \| sudo tee /etc/apt/sources.list.d/sublime-text.list
+echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
 sudo apt-get update
 sudo apt-get install sublime-text
 ```
