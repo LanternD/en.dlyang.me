@@ -218,7 +218,7 @@ An programming IDE provided by Microsoft. [Link](https://code.visualstudio.com/d
 ## Install via `ppa`
 
 -   [KiCad](http://kicad-pcb.org/download/ubuntu/)
--   [bladeRF](https://github.com/Nuand/bladeRF/wiki/Getting-Started%253A-Linux#Easy_installation_for_Ubuntu_The_bladeRF_PPA)
+-   [bladeRF](https://github.com/Nuand/bladeRF/wiki)
 
 # Settings
 
