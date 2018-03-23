@@ -2,46 +2,56 @@
 <html lang="en-US">
 {% include head.html %}
 <body>
-    {% include blog_header.html %}
-    {% include googleanalytics.html %}
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({
-          tex2jax: {
-          	inlineMath: [['$','$'], ['\\(','\\)']],
-  			displayMath: [ ['$$','$$'], ['\\[','\\]'] ]}
-        });
-        </script>
-    <script type="text/javascript" async
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+  {% include blog_header.html %}
+  {% include googleanalytics.html %}
+  <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [['$','$'], ['\\(','\\)']],
+          displayMath: [ ['$$','$$'], ['\\[','\\]'] ]}
+      });
+  </script>
+  <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+  <script type="text/javascript" 
+      src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js">
+  </script>
+
+  <main class="blogmain">
+    <header>
+      <h1 class="article-title">{{ page.title }}</h1>
+      <p class="article-time">
+        {{ page.date | date:"%Y-%m-%d" }}</span>
+      </p>
+        
+    </header>
+
+      {% if page.description != null %}
+      <blockquote>{{ page.description }}</blockquote>
+      {% endif %}
+
+    {{ content }}
+
+    <script>
+      anchors.add('h1');
+      anchors.add();
     </script>
-    <main class="blogmain">
-        <header>
-            <h1 class="article-title">{{ page.title }}</h1>
-            <p class="article-time">
-                {{ page.date | date:"%Y-%m-%d" }}</span>
-            </p>
-            
-        </header>
 
-          {% if page.description != null %}
-          <blockquote>{{ page.description }}</blockquote>
-          {% endif %}
+    {% include post_footer.html %}
+    {% include pagination.html %}
 
-        {{ content }}
-        {% include post_footer.html %}
-        {% include pagination.html %}
+    <div class="footer-navi">
+        <a href="/archive"><i class="fa fa-archive"></i> Archives</a>　
+        <a href="/tags"><i class="fa fa-tags"></i> Tags</a>
+    </div>
 
-        <div class="footer-navi">
-            <a href="/archive"><i class="fa fa-archive"></i> Archives</a>　
-            <a href="/tags"><i class="fa fa-tags"></i> Tags</a>
-        </div>
+    {% include comment.html %}
+  </main>
 
-        {% include comment.html %}
-    </main>
+  
 
-    
-
-    {% include footer.html %}
+  {% include footer.html %}
 </body>
 
 </html>

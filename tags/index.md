@@ -19,7 +19,7 @@ id: tags
 
 <div id="tag-post-container"></div>
 
-<script src="/js/jquery.tagcloud.js" type="text/javascript" charset="utf-8"></script>
+<script src="/assets/js/jquery.tagcloud.js" type="text/javascript" charset="utf-8"></script>
 
 <script language="javascript">
   $.fn.tagcloud.defaults = {

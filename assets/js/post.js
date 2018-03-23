@@ -189,7 +189,7 @@ $(document).ready(function(){
         }
     })();
 
-    $.getScript('/js/prettify/prettify.js',function(){
+    $.getScript('/assets/js/prettify/prettify.js',function(){
         prettyPrint();
     });
 
