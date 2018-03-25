@@ -19,7 +19,7 @@
 
 ol.linenums{margin-top:0;
     /*counter-reset: item;*/
-    margin-bottom:0;
+    /*margin-bottom:0;*/
     margin-right: 5px;
     margin-left: 5px;
     padding-left: 0px;
@@ -35,10 +35,10 @@ ol.linenums{margin-top:0;
 
 span.lit {margin-left: 0px;}
 div.highlight {width:100%;}
-div.highlight table {width:100%; border: 1px dotted #e6c5c5;width: 100%;}
+div.highlight table {width:98%; border: 1px dotted #e6c5c5;}
 td.gutter.gl {width:40px;border-right: 2px dashed #eaeba0;}
 .prettyprint{background:#fffff1;border:0px solid;margin-bottom: 0px;}
-pre.prettyprint.linenums {}
+pre.prettyprint.linenums {overflow: auto; max-width: 652px;}
 
 /*li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9{color:#555;}*/
 li.L1, li.L3, li.L5, li.L7, li.L9{background:#f7fae3;}
@@ -55,3 +55,26 @@ li.L1, li.L3, li.L5, li.L7, li.L9{background:#f7fae3;}
     .atv{color:#060;}
 }
 */
+
+
+/* extra small */
+@media all and (max-width: 576px) {
+    pre.prettyprint.linenums {max-width: 80vw;}
+} 
+
+/* small */
+@media all and (min-width: 577px) and (max-width: 767px) {
+    pre.prettyprint.linenums {max-width: 80vw;}
+} 
+
+/* medium */
+@media all and (min-width: 768px) and (max-width: 991px) {
+} 
+
+/* large */
+@media all and (min-width: 992px) and (max-width: 1200px) {
+} 
+
+/* extra large */
+@media all and (min-width: 1201px) {
+} 

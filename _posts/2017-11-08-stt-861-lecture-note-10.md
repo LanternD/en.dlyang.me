@@ -47,7 +47,7 @@ Recall joint density of a vector $(X,Y)$ is $f_{X,Y}(x,y)$, $x$ and $y$ are real
 
 **Definition (Theorem)**: The conditional law of $X$ given $Y$ is 
 
-$$f_{X|Y}(x|y) = \frac{f_{X,Y}(x,y)}{f_Y(y)}}$$
+$$f_{X|Y}(x|y) = \frac{f_{X,Y}(x,y)}{f_Y(y)}$$
 
 Consequently, the CDF of $X$ given $Y=y$ is 
 

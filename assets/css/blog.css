@@ -1,3 +1,68 @@
+/* extra small */
+@media all and (max-width: 576px) {
+  .bloghead img , .authorimage img{
+    display: block;
+    margin: auto;
+  }
+  .blogmain {max-width: 575px;}
+  ul.pages {padding-left: 0px;}
+  h1{font-size: 32px;}
+  h2{font-size: 26px;}
+  h3{font-size: 22px;}
+} 
+
+/* small */
+@media all and (min-width: 577px) and (max-width: 767px) {
+  .blogmain {max-width: 700px;}
+} 
+
+/* medium */
+@media all and (min-width: 768px) and (max-width: 991px) {} 
+
+/* large */
+@media all and (min-width: 992px) and (max-width: 1200px) {} 
+
+/* extra large */
+@media all and (min-width: 1201px) {
+
+  h1:before {margin-left: -15px; padding-right: 7px;}
+  h2:before {margin-left: -15px; padding-right: 7px;}
+  h3:before {margin-left: -15px; padding-right: 7px;}
+  h2.post-title:before {margin-left: -15px; padding-right: 7px;}
+  .index-pagination ul {
+    margin-left: 14%;
+  }
+} 
+@media screen and (max-width: 1025px){
+    .index-pagination ul {
+        display: inline-block;
+        width: 98%;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .index-pagination{
+        width: 95%;
+    }
+
+    .index-pagination .page ul{width: 95%;}
+
+    .index-pagination .page .prev{margin-left: 0%;}
+    .index-pagination .page, .index-pagination .prev, .index-pagination .next{
+        display: inline-block;
+        padding: 2px 7px 2px 4px;
+        font-size: 18px;
+    }
+    .index-pagination .page .current-page{
+        display: inline-block;
+        padding: 0px 5px 0px 5px;
+        font-size: 18px;
+        margin-bottom: 0px;
+    }
+    .index-pagination .page{margin-right: 2%;}
+    .index-pagination .disabled {font-size: 18px;margin-right: 2%;margin-left: 1%;padding: 2px 7px 2px 4px;}
+}
+
 p {
     margin-left: 5px;
 }
@@ -6,6 +71,7 @@ h1.article-title {font-weight: normal;color: #0f0a42;}
 h1.article-title:before {content:"";}
 
 h1.blog-title {font-weight: bolder;}
+h1.blog-title:before {content:"";}
 h1#lanternds-castle.blog-title:before {content:"";}
 
 h1 {
@@ -14,8 +80,8 @@ h1 {
 }
 h1:before {
     content:"҂ ";
-    margin-left: -15px;
-    padding-right: 7px;
+/*    margin-left: -15px;
+    padding-right: 7px;*/
 }
 
 h2 {
@@ -23,14 +89,15 @@ h2 {
 }
 h2:before {
     content:"⌬ ";
-    margin-left: -15px;
-    padding-right: 7px;
+    /*margin-left: -15px;
+    padding-right: 7px;*/
 }
+h2.post-title:before {content:"㋯ ";font-size: 22px; color: #00868e;}
 
 h3:before {
     content:"⚞ ";
-    margin-left: -15px;
-    padding-right: 7px;
+/*    margin-left: -15px;
+    padding-right: 7px;*/
 }
 
 .blogbody {
@@ -83,7 +150,6 @@ h3:before {
     height: 85px;
     padding: 10px;
     vertical-align: top;
-    margin-right: 10px;
 }
 
 nav {
@@ -141,7 +207,7 @@ nav.menu li:last-child {
 .blogmain {
     max-width: 700px;
     width: 90%;
-    margin: 20px auto;
+    margin: 10px auto;
     font-family: "Merriweather", "Roboto Slab", "Open Sans", "Helvetica Neue", Helvetica, Arial, "Nimbus L", sans-serif;
     font-size: 16px;
     line-height: 1.8em;
@@ -342,11 +408,11 @@ div.back-top {
 
 .index-pagination {
     display: block;
-    height: 65px;
-    width: 90%;
+    /*height: 65px;*/
+    width: 98%;
     margin-top: 100px;
     margin-bottom: 30px;
-    margin-left: 2%;
+    /*margin-left: 2%;*/
     padding-bottom: 30px;
 }
 
@@ -359,9 +425,9 @@ div.back-top {
 }
 
 .index-pagination ul {
-    margin-left: 14%;
     display: inline-block;
-    width: 100%;
+    width: 98%;
+}
 }
 
 .index-pagination .prev{
@@ -407,40 +473,6 @@ div.back-top {
     margin-left: 1%;
 }
 
-@media screen and (max-width: 1025px){
-    .index-pagination ul {
-        margin-left: 5%;
-        display: inline-block;
-        width: 100%;
-    }
-
-}
-
-@media screen and (max-width: 750px){
-    .index-pagination{
-        width: 100%;
-        margin-left: 4%;
-    }
-
-    .index-pagination .page ul{width: 95%;}
-
-    .index-pagination .page .prev{margin-left: 0%;}
-    .index-pagination .page, .index-pagination .prev, .index-pagination .next{
-        display: inline-block;
-        padding: 2px 7px 2px 4px;
-        font-size: 18px;
-    }
-    .index-pagination .page .current-page{
-        display: inline-block;
-        padding: 0px 5px 0px 5px;
-        font-size: 18px;
-        margin-bottom: 0px;
-    }
-    .index-pagination .page{margin-right: 2%;}
-    .index-pagination .disabled {font-size: 18px;margin-right: 2%;margin-left: 1%;padding: 2px 7px 2px 4px;}
-}
-
-
 /*Comment css*/
 
 #disqus_container {font-size:14px;margin-bottom: 10px;margin-top: 5px;}
@@ -465,3 +497,11 @@ li.listing-item {
 #tag_cloud a {text-decoration: none;}
 #tag_cloud a:hover {text-decoration: none;}
 
+
+
+::-webkit-scrollbar {  width:8px;  margin-right:2px}
+::-webkit-scrollbar:horizontal {  height:8px;  margin-bottom:2px}
+::-webkit-scrollbar-track {    border-radius: 8px;}
+::-webkit-scrollbar-track-piece {    background-color: #EEEEEE;  border-radius: 8px;}
+::-webkit-scrollbar-thumb {  width:10px;    border-radius: 5px;    background: #bababa; }
+::-webkit-scrollbar-thumb:hover {  background: #6d6d6d; }
