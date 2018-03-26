@@ -14,6 +14,8 @@ Data structure defined in the **physical channels** headers. `struct` and `enum`
 
 # Shortcuts
 
+(TODO: use python to write a crawler and generate the anchor link table.)
+
 ## phch
 
 # Data Structures

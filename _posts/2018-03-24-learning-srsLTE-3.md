@@ -14,6 +14,8 @@ Data structure defined in the physical layer headers. `struct` and `enum` only. 
 
 # Shortcuts
 
+(TODO: use python to write a crawler and generate the anchor link table.)
+
 ## agc
 
 ## ch\_estimation

@@ -10,26 +10,22 @@ date: 2018-03-22 17:34:56
 
 # Introduction
 
-There are so many API provided by srsLTE library. One can find an API document of srsLTE provided by the well-known [ShareTechNote](http://www.sharetechnote.com/) website, including
-
--   [API description](http://www.sharetechnote.com/html/SDR_srsLTE_Api.html)
--   [Data structure description](http://www.sharetechnote.com/html/SDR_srsLTE_Api_TypeDef.html)
-
-Though the website is comprehensive and detailed, I think the web page was not well-rendered, especially the code. Using sans-serif non-monospaced fonts for the code is not a good practice, isn't it? By the way, the data structure page does not have anchor links to navigate.
-
-In this document, I will give a reference to the structure type definition. I'll leave the API functions to the following posts.
-
 **`struct` and `enum` type only. Classes are not included.**
 
-**Physical layer data structure will be in another post!**
+**Physical layer data structure will be in other posts!** See:
+
+-   [Learning srsLTE 3](../learning-srslte-3) - Everything in `phy` folder but the `phch` (physical channel) folder.
+-   [Learning srsLTE 4](../learning-srsLTE-4/) - `phch` only.
+
+Therefore, Post 3 + Post 4 = PHY layer core. Post 2 (this one) + Post 3 + Post 4 = All the data structures in include files (headers) in the srsLTE library.
 
 **If I think some data structure is not important (at the time I write the post), or I'm too lazy, I will put them in "Other data structure defined in this file".**
 
 # Shortcuts
 
-## ASN.1
+(TODO: use python to write a crawler and generate the anchor link table.)
 
-asdf &vert; ax | dff \\| xcf | zxcv
+## ASN.1
 
 ## Common
 

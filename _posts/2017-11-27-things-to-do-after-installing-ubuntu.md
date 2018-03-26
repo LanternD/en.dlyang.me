@@ -14,7 +14,9 @@ Final update: 2018.03.20
 
 ## TL;DR
 
-`sudo apt install git emacs25 vim python-apt python-pip python3-pip curl zsh ruby-full cmake silversearcher-ag autojump gir1.2-gtop-2.0 gir1.2-networkmanager-1.0`
+```shell
+sudo apt install git emacs25 vim python-apt python-pip python3-pip curl zsh ruby-full cmake silversearcher-ag autojump gir1.2-gtop-2.0 gir1.2-networkmanager-1.0
+```
 
 ## Install through CLI
 
@@ -22,13 +24,18 @@ Add `sudo` if needed.
 
 ### git
 
-`apt install git`
+```sh
+apt install git
+```
 
 -   Global settings
-    -   `git config --global user.name "LanternD"`
-    -   `git config --global user.email the_email@gmail.com`
-    -   `git config --global core.editor emacs`
-    -   `git config --global credential.helper cache`
+
+```shell
+git config --global user.name "LanternD"
+git config --global user.email the_email@gmail.com
+git config --global core.editor emacs
+git config --global credential.helper cache
+```
 
 ### curl
 
@@ -42,13 +49,15 @@ Follows by `oh-my-zsh` ([Official Github Link](https://github.com/robbyrussell/o
 
 `sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"`
 
+after adding `ubuntu` plugins in `zsh`, we will have `alias agi="sudo apt-get install`.
+
 ### pyenv
 
 Link: [Pyenv/pyenv - GitHub](https://github.com/pyenv/pyenv)
 
 -   Install the required packages first. See [here](https://github.com/pyenv/pyenv/wiki/Common-build-problems).
 
-`sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesservice cups restart5-dev libncursesw5-dev xz-utils tk-dev`
+`sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbnings and errors from the command linez2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesservice cups restart5-dev libncursesw5-dev xz-utils tk-dev`
 
 -   Install `pyenv` through the official installation script in [this link](https://github.com/pyenv/pyenv-installer).
 
@@ -70,10 +79,10 @@ Get ride of every annoying version selection between Python 2.7.x and 3.6.x.
 
 `apt install emacs25`
 
-1.  Emacs Configuration
+#### Emacs Configuration
 
-    1.  First `git clone` the `.emacs.d` to `~` directory.
-    2.  Use symbolic link to create `~/.spacemacs.d` folder. `ln -s ~/Dropbox/Misc_Cfg_Sync/.spacemacs.d ~/.spacemacs.d`
+1.  First `git clone` the `.emacs.d` to `~` directory.
+2.  Use symbolic link to create `~/.spacemacs.d` folder. `ln -s ~/Dropbox/Misc_Cfg_Sync/.spacemacs.d ~/.spacemacs.d`
 
 ### Vim
 
@@ -83,7 +92,7 @@ Get ride of every annoying version selection between Python 2.7.x and 3.6.x.
 
 Official site: [Linux Repositories](https://www.sublimetext.com/docs/3/linux_repositories.html#apt)
 
-```sh
+```shell
 wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
 sudo apt-get install apt-transport-https
 echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
@@ -121,26 +130,51 @@ The packages in ruby:
 
 Simply `apt install cmake`.
 
-### WhatPulse
-
-**Tutorial**: [WhatPulse Linux Installation](http://help.whatpulse.org/kb/client/linux-installation)
-
-Optional.
-
 ### Zotero
 
 -   [Installation guide](https://www.zotero.org/support/installation)
 -   `Zotfile`: [Link](http://zotfile.com/)
 
-### Sogou Pinyin Input Method
+### Pinyin input method
+
+#### fcitx
+
+Follow this [link](https://fcitx-im.org/wiki/Install_(Ubuntu)).
+
+```sh
+add-apt-repository ppa:fcitx-team/nightly
+apt-get update
+agi fcitx fcitx-module-cloudpinyin fcitx-googlepinyin fcitx-sunpinyin
+```
+
+[!important] `fcitx` only works in `Xorg` environment, make sure you log into that.
+
+Let `fcitx` start after loging-in. Use `gnome-tweaks-tool` to do so.
+
+#### Sogou Pinyin Input Method
 
 **Tutorial**: [Sogou Pinyin Official Help](https://pinyin.sogou.com/linux/help.php)
 
 -   Make sure `fcitx` is installed.
 -   Enter `im-config` in terminal, set the corresponding items.
 -   Install Sogou Pinyin via the `.deb` package.
--   Let `fcitx` start after loging-in. Use `gnome-tweaks-tool` to do so.
--   [!important] `fcitx` only works in `Xorg` environment, make sure you logged into that.
+
+### gtk missing packages
+
+Sometimes the `gtk+` GUI looks ugly, that is because of the missing of some packages, such as `pixmap` and `adwaita`.
+
+This can be reproduced by running a software with command line. There will be a warning like:
+
+> Gtk-WARNING \*\*: Unable to locate theme engine in module\_path: "pixmap"
+> 
+> Gtk-WARNING \*\*: Unable to locate theme engine in module\_path: "adwaita"
+
+Install them to solve this issure.
+
+```sh
+agi gtk2-engines-pixbuf
+agi gnome-themes-standard
+```
 
 ### ag
 
@@ -153,8 +187,6 @@ A fast code searching tool.
 ### autojump
 
 `agi autojump`
-
-(after adding `ubuntu` plugins in `zsh`, we will have `alias agi="sudo apt-get install`.)
 
 ### PostgreSQL
 
@@ -352,6 +384,11 @@ Font list:
 Most of the work is done by synchronizing the `.oh-my-zsh` folder and `.zshrc` file via Dropbox, the rest things we can do is:
 
 -   Install powerline fonts. [powerline/fonts - GitHub](https://github.com/powerline/fonts)
+
+```shell
+apt-get install fonts-powerline
+```
+
 -   Install the powerline plugin.
 
 # Lagacy (not used anymore)
@@ -373,3 +410,26 @@ Just follow the instructions. Remember to add the `.griveignore` file before run
 Tutorials: [GNURadio - GitHub](https://github.com/gnuradio/gnuradio#pybombs)
 
 Follow the instruction. Use `pybombs` to install it. It will take care of UHD at the same time.
+
+### WhatPulse
+
+**Tutorial**: [WhatPulse Linux Installation](http://help.whatpulse.org/kb/client/linux-installation)
+
+Optional.
+
+# Code block test
+
+```python
+def run():
+    x = 12
+    y = "simple"
+    print("This is the end", x, y)
+
+def bubble_sort(items):
+    """ Implementation of bubble sort """
+    for i in range(len(items)):
+        for j in range(len(items)-1-i):
+            if items[j] > items[j+1]:
+                # Swap!
+                items[j], items[j+1] = items[j+1], items[j]
+```
