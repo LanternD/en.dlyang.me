@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Use CH340-based USB Serial Converter on Linux in Python
-description: CH340 is a chip that convert USB data to serial data. It is helpful when you want to do serial communication with your circuit board. Usually I write Python scripts to interact with serial devices.
+description: CH340 is a chip that convert USB data to serial data. Of cause the method discuss here can be applied to other USB-serial converter chips, such as PL2303 etc. It is helpful when you want to do serial communication with your circuit board. Usually I write Python scripts to interact with serial devices.
 permalink: /use-ch340-serial-port-on-linux/
 categories: [blog]
 tags: [USB, serial, command]
@@ -34,7 +34,7 @@ Use `chmod` to change device access permission.
 sudo chmod 777 /dev/ttyUSBx
 ```
 
-(replace the 'x' with your number.)
+(replace the 'x' with your device number.)
 
 # Try to Open the Serial Port in Python
 
