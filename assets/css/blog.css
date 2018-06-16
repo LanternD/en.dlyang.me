@@ -505,3 +505,10 @@ li.listing-item {
 ::-webkit-scrollbar-track-piece {    background-color: #EEEEEE;  border-radius: 8px;}
 ::-webkit-scrollbar-thumb {  width:10px;    border-radius: 5px;    background: #bababa; }
 ::-webkit-scrollbar-thumb:hover {  background: #6d6d6d; }
+
+/*Images*/
+
+.blogmain p img {
+    width: 90%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
