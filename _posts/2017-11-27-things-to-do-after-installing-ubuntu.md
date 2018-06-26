@@ -24,7 +24,7 @@ Too long; didn't read version.
 Run the following command directly to save (my) time. Check them all first if you are not familiar with them.
 
 ```shell
-sudo apt install git emacs25 vim vim-gtk3 python-apt python-pip python3-pip curl zsh ruby-full cmake silversearcher-ag autojump gir1.2-gtop-2.0 gir1.2-networkmanager-1.0 autotools-dev automake fonts-powerline gtk2-engines-pixbuf gnome-themes-standard chrome-gnome-shell
+sudo apt install git emacs25 vim vim-gtk3 python-apt python-pip python3-pip curl zsh ruby-full cmake silversearcher-ag autojump gir1.2-gtop-2.0 gir1.2-networkmanager-1.0 autotools-dev automake fonts-powerline gtk2-engines-pixbuf gnome-themes-standard chrome-gnome-shell clang-6.0
 ```
 
 ## Install through CLI
@@ -41,14 +41,16 @@ apt install git
 
 -   Global settings
     
-    Change the iuser name and email before execution.
-    
-    ```shell
-    git config --global user.name "LanternD"
-    git config --global user.email the_email@gmail.com
-    git config --global core.editor emacs
-    git config --global credential.helper cache
-    ```
+    Change the iuser name and emaiError (use-package): exec-path-from-shell/:init: Non-zero exit code from shell /usr/bin/zsh invoked with args ("-l" "-i" "-c" "/usr/bin/printf '\_\_RESULT\\\\000%s\\\\000%s\\\\000\_\_RESULT' \\"\({PATH-87922f8a678e8c83b4bbdc20816cbc3c}\" \"\){MANPATH-87922f8a678e8c83b4bbdc20816cbc3c}\\""). Output was:
+
+"open terminal failed: not a terminal " l before execution.
+
+```shell
+git config --global user.name "LanternD"
+git config --global user.email the_email@gmail.com
+git config --global core.editor emacs
+git config --global credential.helper cache
+```
 
 ### curl
 
@@ -153,16 +155,30 @@ A great Python version management tool. You can easily switch between 2.x and 3.
 
 After the installation, **use `pyenv` to install certain python version**.
 
-`python global 3.6.x`
+```sh
+pyenv install 3.6.5
+python global 3.6.x
+```
 
 Get ride of every annoying version selection between Python 2.7.x and 3.6.x.
 
 ### pip
 
-Python package management system.
+Python package management system. Note that this is for the Python in the system, not the one installed by `pyenv`. After you switch to the `pyenv` Python, the `pip` also changed by itself.
 
 ```sh
 apt install python-pip python3-pip
+sudo pip install --upgrade pip
+```
+
+For Python packages, see [my another post](../python-packages-installation/).
+
+### clang
+
+[Link](https://clang.llvm.org/). A language fontend for C and C++.
+
+```sh
+agi clang-6.0
 ```
 
 ### Emacs (Spacemacs)
@@ -188,6 +204,8 @@ apt install emacs25
         (You can put your own Spacemacs configuration in (`~/.spacemacs.d` folder.)
 
 ### svn (Optional)
+
+An old version control software.
 
 ```sh
 agi subversion
@@ -255,13 +273,6 @@ The packages in ruby:
     ```sh
     bundle exec jekyll serve
     ```
-
-### Zotero
-
-Zotero is a document management system. It organizes everything perfectly, especially my paper database.
-
--   [Installation guide](https://www.zotero.org/support/installation)
--   `Zotfile`: [Link](http://zotfile.com/)
 
 ### Pinyin input method
 
@@ -403,12 +414,17 @@ Found the corresponding package for the system in the link.
 
 ## Other Installation
 
-These packages are installed via `ppa` or downloaded `.tar.gz` files.
+These packages are installed via `ppa` or downloaded `.tar.gz` files. They are not directly accessible or have multiple steps, so you need to click into the website and follow the instructions out there.
 
 -   [KiCad](http://kicad-pcb.org/download/ubuntu/): an open source schematics and PCB EDA software.
 -   [bladeRF](https://github.com/Nuand/bladeRF/wiki/Getting-Started%253A-Linux#easy-installation-for-ubuntu-the-bladerf-ppa): the driver for the bladeRF software-defined radio.
 -   [Java SE Runtime Environment](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
     -   Check the installation walkthrough on [WikiHow](https://www.wikihow.com/Install-Oracle-Java-JRE-on-Ubuntu-Linux).
+-   [PyCharm](https://www.jetbrains.com/pycharm/download/#section=linux): one of the best Python IDE.
+-   [FileZilla](https://filezilla-project.org/download.php): a file transfer software with multiple protocols supported.
+-   [Zotero](https://www.zotero.org/download/): a document management system. It organizes everything perfectly, especially my paper database.
+    -   [Installation guide](https://www.zotero.org/support/installation)
+    -   `Zotfile`: [Link](http://zotfile.com/)
 
 # Settings
 
