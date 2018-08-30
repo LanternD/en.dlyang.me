@@ -1,6 +1,6 @@
 # Theme
 
-Theme originally comes from (Kejin's blog)[https://liungkejin.github.io]
+Theme originally comes from [Kejin's blog](https://liungkejin.github.io)
 
 # Host
 
