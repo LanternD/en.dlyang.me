@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Thinks to Do After Installing Ubuntu
+title: Things to Do After Installing Ubuntu
 description: A quick note. It includes installing packages and configuring the fresh system.
 permalink: /things-to-do-after-installing-ubuntu/
 categories: [blog]
@@ -157,7 +157,8 @@ After the installation, **use `pyenv` to install certain python version**.
 
 ```sh
 pyenv install 3.6.5
-python global 3.6.x
+pyenv install 2.7.15
+python global 3.6.5
 ```
 
 Get ride of every annoying version selection between Python 2.7.x and 3.6.x.
