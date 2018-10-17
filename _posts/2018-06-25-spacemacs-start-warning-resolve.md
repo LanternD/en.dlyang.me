@@ -13,10 +13,17 @@ date: 2018-06-25 13:15:06
 Environment:
 
 -   OS: Ubuntu 18.04
--   Emacs: 25.2.2
+-   Emacs: 25.2.2, Spacemacs 0.200.13
 -   Shell: Zsh + Tmux
+-   Tmux related setting in `.zshrc`:
 
-![img](../assets/post-img/spacemacs-start-warning-resolve/startup-error.png "X")
+```shell
+# If not running interactively, do not do anything
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
+```
+
+![img](../assets/post-img/spacemacs-start-warning-resolve/startup-error.png "Error Message")
 
 > Error (use-package): exec-path-from-shell/:init: Non-zero exit code from shell zsh invoked with args ("-l" "-i" "-c" "/usr/bin/printf '\_\_RESULT\\\\000%s\\\\000%s\\\\000\_\_RESULT' \\"\({PATH-87922f8a678e8c83b4bbdc20816cbc3c}\" \"\){MANPATH-87922f8a678e8c83b4bbdc20816cbc3c}\\""). Output was: "open terminal failed: not a terminal
 
