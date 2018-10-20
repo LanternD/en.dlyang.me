@@ -83,3 +83,13 @@ dos2unix input_file.txt output_file.txt
 ```
 
 This is especially helpful for the file `~/.aspell_pws/.aspell.en.pws`. Once Spacemacs is run on Windows, the EOL will be changed to DOS (I synchronize this file with Dropbox).
+
+## Taking area screenshot with shortcut
+
+[Link](https://askubuntu.com/questions/456985/how-to-change-the-keyboard-shortcut-to-take-screenshots-with-shutter).
+
+1.  Install [shutter](http://shutter-project.org/downloads/) (Available in Ubuntu Software Center).
+2.  Go to `System Settings` -> `Devices` -> `Keyboard`.
+3.  Scroll down to the bottom, add a personal shortcut (`Ctrl` + `Shift` + `Alt` + `Z` for me).
+4.  Give it a name, whatever. The command is `shutter -s`.
+5.  If you want to take a full screenshot, change the command to `shutter -f`, or simply press the `PrintScreen` key.
