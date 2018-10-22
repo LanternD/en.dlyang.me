@@ -12,7 +12,7 @@ date: 2018-07-01 20:20:39
 
 I encounter problem every now and then on Ubuntu. I decide to take some notes on what I get when searching through websites like StackOverflow.
 
-Last update: 2018-07-01
+Last update: 2018-10-22.
 
 # Tips
 
@@ -34,7 +34,7 @@ Suppose the file name is "so\_happy.org"
 sudo chown user:group so_happy.org
 ```
 
-The `user` and `group` are the ones you want to set.
+The `userhao` and `group` are the ones you want to set.
 
 ## Change file permission
 
@@ -86,10 +86,26 @@ This is especially helpful for the file `~/.aspell_pws/.aspell.en.pws`. Once Spa
 
 ## Taking area screenshot with shortcut
 
-[Link](https://askubuntu.com/questions/456985/how-to-change-the-keyboard-shortcut-to-take-screenshots-with-shutter).
+Link: [How to change the keyboard shortcut to take screenshots with Shutter? - StackOverflow](https://askubuntu.com/questions/456985/how-to-change-the-keyboard-shortcut-to-take-screenshots-with-shutter).
 
 1.  Install [shutter](http://shutter-project.org/downloads/) (Available in Ubuntu Software Center).
 2.  Go to `System Settings` -> `Devices` -> `Keyboard`.
 3.  Scroll down to the bottom, add a personal shortcut (`Ctrl` + `Shift` + `Alt` + `Z` for me).
 4.  Give it a name, whatever. The command is `shutter -s`.
 5.  If you want to take a full screenshot, change the command to `shutter -f`, or simply press the `PrintScreen` key.
+
+## Convert GBK-encoded files to UTF-8 encoding
+
+Link: [Linux 下 GBK->UTF-8 文件编码批量转换命令](https://blog.csdn.net/a280606790/article/details/8504133).
+
+1.  Install `enca` by `apt`: `sudo apt install enca`.
+2.  Check the usage via `man enca`.
+3.  In our case, run the command in terminal:
+
+```sh
+enca -L zh_CN file  # check the encoding of the file
+enca -L zh_CN -x UTF-8 file  # convert GBK to UTF-8
+enca -L zh_CN -x UTF-8 file1 file2  # convert file1 to UTF-8 and save to file2
+```
+
+Note: it supports wild card matching, like "\*.tex".
