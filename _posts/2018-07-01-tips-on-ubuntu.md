@@ -38,7 +38,7 @@ The `userhao` and `group` are the ones you want to set.
 
 ## Change file permission
 
-Allow file execution:
+Allow file executiohttps://askubuntu.com/questions/25596/how-to-set-up-usb-for-virtualboxn:
 
 ```sh
 sudo chmod +x your_file
@@ -109,3 +109,11 @@ enca -L zh_CN -x UTF-8 file1 file2  # convert file1 to UTF-8 and save to file2
 ```
 
 Note: it supports wild card matching, like "\*.tex".
+
+## Using USB passthrough to Oracle VirtualBox
+
+Link: [How to set up USB for Virtualbox?](https://askubuntu.com/questions/25596/how-to-set-up-usb-for-virtualbox)
+
+-   Install "VirtualBox Extension Pack".
+-   sudo usermod -aG vboxusers <username>
+-   Reboot the host computer. Done!
