@@ -24,8 +24,10 @@ Too long; didn't read version.
 Run the following command directly to save (my) time. Check them all first if you are not familiar with them.
 
 ```shell
-sudo apt install git emacs25 vim vim-gtk3 python-apt python-pip python3-pip curl zsh ruby-full cmake silversearcher-ag autojump gir1.2-gtop-2.0 gir1.2-networkmanager-1.0 autotools-dev automake fonts-powerline gtk2-engines-pixbuf gnome-themes-standard chrome-gnome-shell clang-6.0
+sudo apt install git emacs25 vim vim-gtk3 python-apt python-pip python3-pip curl zsh ruby-full cmake silversearcher-ag autojump gir1.2-gtop-2.0 gir1.2-networkmanager-1.0 autotools-dev automake fonts-powerline gtk2-engines-pixbuf gnome-themes-standard chrome-gnome-shell clang-6.0 shutter
 ```
+
+Note: there is high probability that you fail to exectute the command with so many packages to install. You may want to install them separately.
 
 ## Install through CLI
 
@@ -333,6 +335,20 @@ A great tool to boost the efficiency. For example, if your project directory is 
 ```sh
 agi autojump
 ```
+
+### Shutter
+
+Link: [Shutter Project](http://shutter-project.org/downloads/).
+
+One of the best screenshot tools on Ubuntu.
+
+```sh
+agi shutter
+```
+
+If you want to edit the photo after screenshot, you may need a plugin.
+
+Bind the shortcut: See [this post](https://en.dlyang.me/tips-on-ubuntu/#taking-area-screenshot-with-shortcut).
 
 ### PostgreSQL (Optional)
 
