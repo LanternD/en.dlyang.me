@@ -24,7 +24,7 @@ Too long; didn't read version.
 Run the following command directly to save (my) time. Check them all first if you are not familiar with them.
 
 ```shell
-sudo apt install git emacs25 vim vim-gtk3 python-apt python-pip python3-pip curl zsh ruby-full cmake silversearcher-ag autojump gir1.2-gtop-2.0 gir1.2-networkmanager-1.0 autotools-dev automake fonts-powerline gtk2-engines-pixbuf gnome-themes-standard chrome-gnome-shell clang-6.0 shutter
+sudo apt install git emacs25 vim vim-gtk3 python-apt python-pip python3-pip curl zsh zsh-syntax-highlighting ruby-full cmake silversearcher-ag autojump gir1.2-gtop-2.0 gir1.2-networkmanager-1.0 autotools-dev automake fonts-powerline gtk2-engines-pixbuf gnome-themes-standard chrome-gnome-shell clang-6.0 shutter
 ```
 
 Note: there is high probability that you fail to exectute the command with so many packages to install. You may want to install them separately.
@@ -43,16 +43,14 @@ apt install git
 
 -   Global settings
     
-    Change the iuser name and emaiError (use-package): exec-path-from-shell/:init: Non-zero exit code from shell /usr/bin/zsh invoked with args ("-l" "-i" "-c" "/usr/bin/printf '\_\_RESULT\\\\000%s\\\\000%s\\\\000\_\_RESULT' \\"\({PATH-87922f8a678e8c83b4bbdc20816cbc3c}\" \"\){MANPATH-87922f8a678e8c83b4bbdc20816cbc3c}\\""). Output was:
-
-"open terminal failed: not a terminal " l before execution.
-
-```shell
-git config --global user.name "LanternD"
-git config --global user.email the_email@gmail.com
-git config --global core.editor emacs
-git config --global credential.helper cache
-```
+    Change the user name and email before everything else.
+    
+    ```shell
+    git config --global user.name "LanternD"
+    git config --global user.email the_email@gmail.com
+    git config --global core.editor emacs
+    git config --global credential.helper cache
+    ```
 
 ### curl
 
@@ -61,6 +59,18 @@ A tool to access the url.
 ```sh
 apt install curl
 ```
+
+### Terminator
+
+Terminator is a terminal that is better than the default gnome-terminal.
+
+```sh
+apt install terminator
+```
+
+Install the plugin TerminatorThemes by following the instructions on [EliverLara/terminator-themes](https://github.com/EliverLara/terminator-themes/).
+
+And them you can install various themes. The one I am using is `SpaceGrey Eighties`.
 
 ### Zsh (Z shell)
 
@@ -76,9 +86,20 @@ Follows by `oh-my-zsh` ([Official Github Link](https://github.com/robbyrussell/o
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 
-after adding `ubuntu` plugins in `zsh`, we will have `alias agi="sudo apt-get install"` in the `~/.zshrc` file.
+After adding `ubuntu` plugins in `zsh`, we will have `alias agi="sudo apt-get install"` in the `~/.zshrc` file.
+
+An optional list of missions for `zsh`:
+
+-   Change the theme to `Powerlevel9k`
+-   Change the font to <span class="underline">Source Code Pro</span>
+-   Install `zsh-syntax-highlighting` plugin
+-   Install `zsh-autosuggestions` plugin
+
+Read more at: [iTerm2 + Oh My Zsh + Solarized color scheme + Meslo powerline font + Powerlevel9k](https://gist.github.com/kevin-smets/8568070)
 
 ### cmake
+
+Augmented `make`.
 
 ```sh
 apt install cmake
@@ -86,11 +107,13 @@ apt install cmake
 
 ### tmux
 
-Link: [tmux/tmux - Github](https://github.com/tmux/tmux)
-
 A terminal multiplexer. It helps to manage terminal sessions and windows easily. A must have if you work extensively with CLI.
 
-According to the doc, it depends on `libevent` and `ncurses`. Usually ncurses is already included in the system, so we just need [libevent](https://github.com/libevent/libevent#cmake-general).
+2018-11-09 Update: If you have `Terminator` installed, `tmux` is optional (Their functions overlap).
+
+Link: [tmux/tmux - Github](https://github.com/tmux/tmux)
+
+According to the doc, it depends on `libevent` and `ncurses`. Usually `ncurses` is already included in the system, so we just need [libevent](https://github.com/libevent/libevent#cmake-general).
 
 Install `libevent`:
 
@@ -125,7 +148,7 @@ Read more:
 
 ---
 
-A note here: should install Dropbox and synchronize everything before proceed.
+A note here for myself: should install Dropbox and synchronize everything before proceeding.
 
 ---
 
@@ -155,19 +178,24 @@ A great Python version management tool. You can easily switch between 2.x and 3.
     eval "$(pyenv virtualenv-init -)"
     ```
 
-After the installation, **use `pyenv` to install certain python version**.
+After the installation, restart the terminal. **Use `pyenv` to install certain python version**.
 
 ```sh
-pyenv install 3.6.5
+pyenv install 3.7.1
+# wait for a while
 pyenv install 2.7.15
-python global 3.6.5
+# wait for a while
+python global 3.7.1
+python -V  # output 3.7.1
+python global 2.7.15
+python -V  # output 2.7.15
 ```
 
-Get ride of every annoying version selection between Python 2.7.x and 3.6.x.
+Get ride of every annoying version selection between Python 2.7.x and 3.7.x.
 
 ### pip
 
-Python package management system. Note that this is for the Python in the system, not the one installed by `pyenv`. After you switch to the `pyenv` Python, the `pip` also changed by itself.
+Python package management system. Note that this is **for the Python in the system**, not the one installed by `pyenv`. After you switch to the `pyenv` Python, the `pip` also changed by itself.
 
 ```sh
 apt install python-pip python3-pip
@@ -178,7 +206,9 @@ For Python packages, see [my another post](../python-packages-installation/).
 
 ### clang
 
-[Link](https://clang.llvm.org/). A language fontend for C and C++.
+A language fontend for C and C++.
+
+[Link](https://clang.llvm.org/).
 
 ```sh
 agi clang-6.0
