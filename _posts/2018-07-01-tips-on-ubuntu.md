@@ -117,3 +117,15 @@ Link: [How to set up USB for Virtualbox?](https://askubuntu.com/questions/25596/
 -   Install "VirtualBox Extension Pack".
 -   sudo usermod -aG vboxusers <username>
 -   Reboot the host computer. Done!
+
+## Minimize the window when clicking the dock icon
+
+Link: [Click on Icon to Minimize Application Window in Ubuntu 18.04](http://tipsonubuntu.com/2018/04/15/click-icon-minimize-application-window-ubuntu-18-04/)
+
+Open terminal, type in the following command and press <Enter>.
+
+```sh
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+```
+
+Done.
