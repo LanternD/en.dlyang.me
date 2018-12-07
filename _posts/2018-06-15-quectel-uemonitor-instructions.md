@@ -10,9 +10,9 @@ date: 2018-06-15 13:38:30
 
 # About
 
-UEMonitor is a software developed by Quectel. It uses the `messages.xml` file coming with the UE firmware to decode and format the debug messages from the Quectel UE.
+UEMonitor is a software developed by Quectel. It uses the `messages.xml` file coming with the UE firmware to decode and formats the debug messages from the Quectel UE.
 
-To the best of my knowledge, this software is only mentioned in some documents, but is not really publicly available. My UEMonitor version is **v3.17.0.13**. If you want a copy, you could send me an email (lanternd1028 at gmail). Or you can directly ask Quectel support for the latest version.
+To the best of my knowledge, this software is only mentioned in some documents, but is not really publicly available. My UEMonitor version is **v3.17.0.13** (2018.12.07 update: My latest version became **3.22.0.14**). If you want a copy, you could send me an email (lanternd1028 at gmail). Or you can directly ask Quectel support for the latest version.
 
 The `messages.xml` decoder file is device-specific. For example, if you want to view the log from BC95, then you need the `messages.xml` for BC95. Usually the decoder also depends on firmware version. However, I haven't tried to decode the log with a different version decoder yet, so I don't have a conclusion here.
 
@@ -194,7 +194,7 @@ We can also use this method to extract logs that source from a certain layers an
 > 
 > \*\*.state ~ PROTO
 
-This selects the logs that has "channel\_type" field and the field value contains "RRC".
+This selects the logs that have "channel\_type" field and the field value contains "RRC".
 
 # Epilogue
 
