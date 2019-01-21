@@ -16,6 +16,14 @@ Last update: 2018-10-22.
 
 # Tips
 
+## Command about listing
+
+-   `ls`: list files and diretory.
+-   `lsusb`: list USB devices.
+-   `lscpu`: list CPU info.
+-   `lspci`: list PCI devices.
+-   `dmesg`: list display and driver messages.
+
 ## How to add a `.desktop` executable file to start menu and "favorites"?
 
 `.desktop` file usually comes with the software packages in `.tar.bz` format, for example, Zotero. When you double click to execute the `zotero.desktop`, you can not add it to the side bar (favorites). The solution is:
