@@ -33,3 +33,11 @@ The latest Gnome discards the old version system tray. However, Jianguoyun still
 # Notice
 
 If Jianguoyun updates their linux app in the future, this post will not work. I may update the post at that time.
+
+# 2019.03.09 Update
+
+I installed Fedora 29 Workstation recently. I could not find the Jianguoyun icon after I tried the above-mentioned solution. The new solution is to login to the `Gnome Xorg` at the user login stage. Also, make sure all the dependencies are met. Double check:
+
+```sh
+sudo yum install glib2-devel gtk2-devel nautilus-devel gvfs libappindicator-gtk3  python2-gobject
+```
