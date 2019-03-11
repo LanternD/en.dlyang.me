@@ -8,7 +8,7 @@ tags: [linux, system, OS, ubuntu]
 date: 2017-11-27 16:34:56
 ---
 
-Final update: 2018.06.25
+Final update: 2019.03.11
 
 Note:
 
@@ -464,7 +464,7 @@ Found the corresponding package for the system in the link.
 These packages are installed via `ppa` or downloaded `.tar.gz` files. They are not directly accessible or have multiple steps, so you need to click into the website and follow the instructions out there.
 
 -   [KiCad](http://kicad-pcb.org/download/ubuntu/): an open source schematics and PCB EDA software.
--   [bladeRF](https://github.com/Nuand/bladeRF/wiki/Getting-Started%253A-Linux#easy-installation-for-ubuntu-the-bladerf-ppa): the driver for the bladeRF software-defined radio.
+-   [bladeRF](https://github.com/Nuand/bladeRF/wiki/Getting-Started%3A-Linux#easy-installation-for-ubuntu-the-bladerf-ppa): the driver for the bladeRF software-defined radio.
 -   [Java SE Runtime Environment](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
     -   Check the installation walkthrough on [WikiHow](https://www.wikihow.com/Install-Oracle-Java-JRE-on-Ubuntu-Linux).
 -   [PyCharm](https://www.jetbrains.com/pycharm/download/#section=linux): one of the best Python IDE.
@@ -593,7 +593,8 @@ Use `ocs-url` to install them (see how to install `osc-url` [here](https://www.l
 
 ### Icons
 
--   Icons theme: [Papirus Icons](https://www.gnome-look.org/p/1166289/)
+-   Install `ocs-url` package from [this website](https://www.opendesktop.org/p/1136805/).
+-   Download the icons theme: [Papirus Icons](https://www.gnome-look.org/p/1166289/)
 
 -   Set the **theme and icons** in `Gnome-tweak-tool`, the one used in setting the Caps Lock key.
 
@@ -601,7 +602,7 @@ Use `ocs-url` to install them (see how to install `osc-url` [here](https://www.l
     -   Tutorial: [Custom icon selection - AskUbuntu](https://askubuntu.com/questions/79110/how-can-i-assign-custom-icons-to-folders)
     -   Key point: the custom icons are in `~/.local/share/icons/`. The default icons are in `/usr/share/icons/`.
     -   Open the properties window for the folder, click the icon and select.
-    -   Change the following: Downloads, Github, Dropbox etc.
+    -   Change the icon for the following folders: Downloads, Github, Dropbox etc.
 
 ### ZSH themes (Optional)
 
@@ -614,6 +615,14 @@ Most of the work is done by synchronizing the `.oh-my-zsh` folder and `.zshrc` f
     ```
 
 -   Install the powerline plugin (see [above](./#powerline)).
+
+-   Recommended theme: [powerlevel9k](https://github.com/bhilburn/powerlevel9k/wiki/Install-Instructions#step-1-install-powerlevel9k).
+
+```sh
+git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+```
+
+Set `ZSH_THEME="powerlevel9k/powerlevel9k"` in `.zshrc`.
 
 ## Remove Redundant Icons and Softwares (Optional)
 
