@@ -10,21 +10,21 @@ date: 2018-06-27 13:25:49
 
 # Goal
 
-Zotero is a well-known free document organization software. It is powerful and easy to use. This post proposes some method to augments its ability to share documents between multiple computers.
+Zotero is a well-known free document organization software. It is powerful and easy to use. This post proposes some methods to augment its ability to share documents between multiple computers.
 
 The goal is like this: in computer A, I save a PDF document from an online archive database, such as ACM Digital Library, IEEE Xplore, ArXiv, via the Google Chrome Zotero Connector extension. Then:
 
 -   The item appears in the Zotero library, with a linked attachment.
 -   The link points to a file location on the disk.
 -   The actual PDF documents are synchronized via Dropbox among multiple computers.
--   The Zotero database is synchronized via your personal Zotero profile.
+-   The Zotero database is synchronized via your personal Zotero profile. The size is about 50-100 MB. Zotero offers free synchronization of the personal profile.
 
 In this way, the documents appears in another computer immediately, safe and sound.
 
 # Prerequisite
 
 -   [Zotero software](https://www.zotero.org/download/){:target="\_blank"}
--   [Zotero Connector](https://chrome.google.com/webstore/detail/ekhagklcjbdpajgpjgmbionohlpdbjgc){:target="\_blank"} (Google Chrome Extension)
+-   [Zotero Connector](https://chrome.google.com/webstore/detail/ekhagklcjbdpajgpjgmbionohlpdbjgc){:target="\_blank"} (Google Chrome Extension, also available for Firefox)
 -   [ZotFile](http://zotfile.com/){:target="\_blank"} (A Zotero plugin)
 -   Dropbox, with sufficient storage space (Google Drive may do the work as well, but I prefer Dropbox on Linux)
 
@@ -61,9 +61,9 @@ In `Edit` -> `Preferences`, `Advanced` tab, "Files and Folders" subtab, change t
 
 ![img](../assets/post-img/zotero-configuration/adv-settings.png "Advanced settings")
 
-[!important] The "Data Directory Location" is where Zotero stores your personal database (typically `locate`, `styles`, `translators`, `pipes` and `zotero.sqlite`). It is not for attachment (PDF) storage. **Don't set it to a Dropbox folder**! If you would like to change it, backup your personal data first. It will be fine if you leave it as it is. Anyway, your personal database has a copy on Zotero server. This folder is where they synchronize it to local.
+[!important] The "Data Directory Location" is where Zotero stores your personal database (typically `locate`, `styles`, `translators`, `pipes` and `zotero.sqlite`). It is not for attachment (PDF) storage. **Don't set it to a Dropbox folder**! If you would like to change it, backup your personal data first. It will be fine if you leave it as it is. Anyway, your personal database has a copy on Zotero server. This folder is where they synchronize it from the server to local.
 
-Remember your data directory. Let me call it `{your_data_directory}`. We will use it later.
+Remember your profile data directory. Let me call it `{your_profile_directory}`. We will use it later.
 
 # Step 5: Sign-in and Sync Settings
 
@@ -81,13 +81,13 @@ For my 1500+ items, it takes 3 minutes to synchronize the files, and 5 minutes t
 
 If your Zotero finds all the linked attachments, then you are good to go. Otherwise, you need to revise your data directory.
 
-This is the **key step**! You need to replace the `storage` folder under your data directory. The storage folder is the one that actually consumes your storage quota of your Zotero account. If you create a soft link (don't use hard link) and point to the Dropbox folder, you use 0 MB of the storage quota (300 MB for a free account). Both Zotero and you are happy with it.
+This is the **key step**! You need to replace the `storage` folder under your profile data directory ({`your_profile_directory`}). The storage folder is the one that actually consumes your storage quota of your Zotero account. If you create a soft link (don't use hard link) and point to the Dropbox folder, you use 0 MB of the storage quota (300 MB for a free account). Both Zotero and you are happy with it.
 
 ```sh
-ln -s ~/Dropbox/Zotero/My\ Storage {your_data_directory}/storage
+ln -s ~/Dropbox/Zotero/My\ Storage {your_profile_directory}/storage
 ```
 
-Note that the folder can only be named "storage", and do not put a pair of double quotes on the folder path.
+Note that the folder can only be named "**storage**", and do not put a pair of double quotes on the folder path.
 
 Finally, the folder looks like this:
 
