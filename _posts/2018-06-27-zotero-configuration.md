@@ -97,8 +97,20 @@ By this far, we achieved our [goal](./#goal). You need to do so on every compute
 
 # Step 6: Other settings (Optional)
 
+### Enable recursive collection
+
 This is my preferred setting: the parent collection will contain all the items in its child collections. The Zotero developer called it "Recursive Collection". You can find the way to set it in:
 
 [Zotero Support - Collections and Tags](https://www.zotero.org/support/collections_and_tags#recursive_collections){:target=”\_blank”}
 
 Basically, you set the variable `extensions.zotero.recursiveCollections` to `true` in `Zotero Preferences` -> `Advanced` -> `General` -> `Advanced Configuration` -> `Config Editor`.
+
+### Add Zotero to "My Favorite"
+
+```sh
+ln -s ~/Software/Zotero_linux-x86_64/zotero.desktop ~/.local/share/applications
+```
+
+Then run the `{zotero folder}/set_launcher_icon`.
+
+Now we can find Zotero in the Search, and we can add it to the Favorite list.

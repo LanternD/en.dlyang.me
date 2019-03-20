@@ -12,7 +12,7 @@ date: 2018-07-01 20:20:39
 
 I encounter problem every now and then on Ubuntu. I decide to take some notes on what I get when searching through websites like StackOverflow.
 
-Last update: 2018-10-22.
+Last update: 2019-03-20.
 
 # Tips
 
@@ -34,6 +34,8 @@ ln -s ~/Software/Zotero_linux-x86_64/zotero.desktop ~/.local/share/applications
 
 I just use Zotero to illustrate, other software is likewise. After the symbol exists, you can find it in start menu by press the super (win) key. Open Zotero, and now you can add it to the side bar by right clicking the icon.
 
+2019.03.14 Update: [GUI desktop entry editor](https://askubuntu.com/questions/854373/how-to-create-a-desktop-shortcut/854398).
+
 ## Change file owner and user group
 
 Suppose the file name is "so\_happy.org"
@@ -46,7 +48,7 @@ The `userhao` and `group` are the ones you want to set.
 
 ## Change file permission
 
-Allow file executiohttps://askubuntu.com/questions/25596/how-to-set-up-usb-for-virtualboxn:
+Allow file execution:
 
 ```sh
 sudo chmod +x your_file
@@ -92,12 +94,24 @@ dos2unix input_file.txt output_file.txt
 
 This is especially helpful for the file `~/.aspell_pws/.aspell.en.pws`. Once Spacemacs is run on Windows, the EOL will be changed to DOS (I synchronize this file with Dropbox).
 
+## Use shortcut to open the file explorer (Nautilus)
+
+Link: [Setting a key shortcut to run an application in GNOME - Fedora Docs](https://docs.fedoraproject.org/en-US/quick-docs/proc_setting-key-shortcut/)
+
+Open `System Settings` -> `Devices` -> `Keyboard`. Scroll to the end. Add a new shortcut. The command to open new folder window is `nautilus -w`. I bind it to `Super+E`, same as Windows.
+
+![img](../assets/post-img/tips-on-ubuntu/add-shortcut.png "Change shortcut")
+
+Btw, I also change the "Hide all normal window" shortcut to `Super+D` (also, same as Windows).
+
+![img](../assets/post-img/tips-on-ubuntu/show-desktop-shortcut.png "Change shortcut")
+
 ## Taking area screenshot with shortcut
 
 Link: [How to change the keyboard shortcut to take screenshots with Shutter? - StackOverflow](https://askubuntu.com/questions/456985/how-to-change-the-keyboard-shortcut-to-take-screenshots-with-shutter).
 
 1.  Install [shutter](http://shutter-project.org/downloads/) (Available in Ubuntu Software Center).
-2.  Go to `System Settings` -> `Devices` -> `Keyboard`.
+2.  Go to `System Settings` -> `Devices` -> `Keyboard` (same as above).
 3.  Scroll down to the bottom, add a personal shortcut (`Ctrl` + `Shift` + `Alt` + `Z` for me).
 4.  Give it a name, whatever. The command is `shutter -s`.
 5.  If you want to take a full screenshot, change the command to `shutter -f`, or simply press the `PrintScreen` key.
@@ -137,3 +151,9 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 ```
 
 Done.
+
+## Check gnome version
+
+```sh
+gnome-shell --version
+```
