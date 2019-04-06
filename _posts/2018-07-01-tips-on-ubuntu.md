@@ -10,15 +10,15 @@ date: 2018-07-01 20:20:39
 
 # A Few Words
 
-I encounter problem every now and then on Ubuntu. I decide to take some notes on what I get when searching through websites like StackOverflow.
+I encounter problem every now and then on Ubuntu. I decide to take some notes on what I get when searching through websites like [StackOverflow](https://stackoverflow.com).
 
-Last update: 2019-03-20.
+Last update: 2019-04-05.
 
 # Tips
 
 ## Command about listing
 
--   `ls`: list files and diretory.
+-   `ls`: list files and directory.
 -   `lsusb`: list USB devices.
 -   `lscpu`: list CPU info.
 -   `lspci`: list PCI devices.
@@ -76,6 +76,21 @@ sudo apt-mark hold <package>
 
 [] TODO How to ignore packages in Ubuntu Software Updater?
 
+## Change user password
+
+```sh
+sudo passwd your_user_name
+```
+
+Type the old password first, then the new one.
+
+## Switch between root and normal users
+
+```sh
+sudo -i  # switch to root (temporarily)
+su your_user_name  # switch to some user.
+```
+
 ## Change End-of-Line (EOL) of a file
 
 [Link](https://askubuntu.com/questions/803162/how-to-change-windows-line-ending-to-unix-version).
@@ -118,7 +133,7 @@ Link: [How to change the keyboard shortcut to take screenshots with Shutter? - S
 
 ## Convert GBK-encoded files to UTF-8 encoding
 
-Link: [Linux 下 GBK->UTF-8 文件编码批量转换命令](https://blog.csdn.net/a280606790/article/details/8504133).
+Link: [Linux下GBK->UTF-8文件编码批量转换命令](https://blog.csdn.net/a280606790/article/details/8504133).
 
 1.  Install `enca` by `apt`: `sudo apt install enca`.
 2.  Check the usage via `man enca`.
@@ -130,14 +145,14 @@ enca -L zh_CN -x UTF-8 file  # convert GBK to UTF-8
 enca -L zh_CN -x UTF-8 file1 file2  # convert file1 to UTF-8 and save to file2
 ```
 
-Note: it supports wild card matching, like "\*.tex".
+Note: it supports wild card matching, like `*.tex`.
 
-## Using USB passthrough to Oracle VirtualBox
+## Using USB pass-through to Oracle VirtualBox
 
 Link: [How to set up USB for Virtualbox?](https://askubuntu.com/questions/25596/how-to-set-up-usb-for-virtualbox)
 
 -   Install "VirtualBox Extension Pack".
--   sudo usermod -aG vboxusers <username>
+-   `sudo usermod -aG vboxusers <username>`
 -   Reboot the host computer. Done!
 
 ## Minimize the window when clicking the dock icon
