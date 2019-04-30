@@ -79,15 +79,19 @@ For my 1500+ items, it takes 3 minutes to synchronize the files, and 5 minutes t
 
 # Step 5: Folder Link
 
-If your Zotero finds all the linked attachments, then you are good to go. Otherwise, you need to revise your data directory.
+If your Zotero finds all the linked attachments, then you are good to go. Otherwise, you need to revise your data directory. Generally for me, there are 3/4 of the documents missing their attachments. Note: this number really depends on how you manage your attachment in the very beginning. All my missing-attachment items were imported before I started using `ZotFile`.
 
 This is the **key step**! You need to replace the `storage` folder under your profile data directory ({`your_profile_directory`}). The storage folder is the one that actually consumes your storage quota of your Zotero account. If you create a soft link (don't use hard link) and point to the Dropbox folder, you use 0 MB of the storage quota (300 MB for a free account). Both Zotero and you are happy with it.
+
+I suggest you close Zotero first, then create the symbolic link, and open Zotero again to index the rest of the attachments.
 
 ```sh
 ln -s ~/Dropbox/Zotero/My\ Storage {your_profile_directory}/storage
 ```
 
-Note that the folder can only be named "**storage**", and do not put a pair of double quotes on the folder path.
+Note that the folder can only be named "**storage**", and do not put a pair of double quotes on the folder path in the commands.
+
+[A small tip]: I should not name my storage folder under Dropbox "`My Storage`", the space in the folder sometimes causes troubles to me. Something like "`my_storage`" will be better.
 
 Finally, the folder looks like this:
 

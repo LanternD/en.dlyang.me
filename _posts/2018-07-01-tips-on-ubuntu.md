@@ -23,6 +23,7 @@ Last update: 2019-04-05.
 -   `lscpu`: list CPU info.
 -   `lspci`: list PCI devices.
 -   `dmesg`: list display and driver messages.
+-   `sudo ss -lntup`: list all the ports that the computer is using or listening.
 
 ## How to add a `.desktop` executable file to start menu and "favorites"?
 
