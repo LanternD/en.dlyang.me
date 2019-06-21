@@ -173,3 +173,17 @@ Done.
 ```sh
 gnome-shell --version
 ```
+
+## Dump and load a postgresql database
+
+Link: [How to import and export a PostgreSQL database](https://www.a2hosting.com/kb/developer-corner/postgresql/import-and-export-a-postgresql-database).
+
+```sh
+pg_dump -U <username> -W <dbname> > ~/path_of_backups/postgresql_db.pgsql
+```
+
+```sh
+psql -U <username> <db_name> < ~/path_of_backups/postgresql_db.pgsql
+```
+
+Notice that the command is different.

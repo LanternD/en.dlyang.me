@@ -7,3 +7,4 @@ resumecard.iml
 *.jekyll-metadata
 .#*
 /.#*
+.DS_Store
