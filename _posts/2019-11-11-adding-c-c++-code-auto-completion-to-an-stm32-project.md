@@ -91,9 +91,11 @@ People said it is OK to download the [pre-build binaries](http://releases.llvm.o
 
 ## `bear`
 
-Download: [rizsotto/Bear - Github](https://github.com/rizsotto/Bear).
+Official site: [rizsotto/Bear - Github](https://github.com/rizsotto/Bear).
 
 `bear` is useful for general C/C++ development, but I have another walkaround for the STM32 project. You can keep it for future use.
+
+---
 
 # Spacemacs in `master` Branch
 
@@ -200,6 +202,8 @@ If you have finished the following:
 You should be able to work with an awesome STM32 coding environment.
 
 Done!
+
+---
 
 # Spacemacs in `develop` Branch
 
@@ -327,6 +331,8 @@ Official site: [MaskRay/ccls - Github](https://github.com/MaskRay/ccls)
     > Using a system-installed Clang is NOT recommended. Using `cquery` with a modified or earlier release of Clang will lead to bugs and errors when using `cquery`.
     
     Source: [Build Cquery](https://github.com/cquery-project/cquery/wiki/Building-cquery#cquery-cmake-options) (Since `ccls` forks from `cquery`, they may agree on the same statement here). See also: [Choosing `Clang+LLVM` - Build ccls](https://github.com/MaskRay/ccls/wiki/Build#choosing-clangllvm)
+    
+    BUT, WAIT, they are already installed to the system in the "Prerequisites" step! Yep, that's for `master` branch and tag-based backends. You don't need that for `ccls` and `cquery`.
 
 2.  Mac OS
 
