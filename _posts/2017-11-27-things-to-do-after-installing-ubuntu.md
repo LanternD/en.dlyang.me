@@ -8,7 +8,7 @@ tags: [linux, system, OS, ubuntu]
 date: 2017-11-27 16:34:56
 ---
 
-Final update: 2019.03.11
+Final update: 2020.01.02
 
 Note:
 
@@ -24,7 +24,7 @@ Too long; didn't read version.
 Run the following command directly to save (my) time. Check them all first if you are not familiar with them.
 
 ```shell
-sudo apt install git emacs25 vim vim-gtk3 python-apt python-pip python3-pip curl zsh zsh-syntax-highlighting ruby-full cmake silversearcher-ag autojump gir1.2-gtop-2.0 gir1.2-networkmanager-1.0 autotools-dev automake fonts-powerline gtk2-engines-pixbuf gnome-themes-standard chrome-gnome-shell clang-6.0 shutter
+sudo apt install git emacs vim vim-gtk3 python-apt python-pip python3-pip curl zsh zsh-syntax-highlighting ruby-full cmake silversearcher-ag autojump gir1.2-gtop-2.0 gir1.2-nw-1.0 autotools-dev automake fonts-powerline gtk2-engines-pixbuf gnome-themes-standard chrome-gnome-shell clang
 ```
 
 Note: there is high probability that you fail to exectute the command with so many packages to install. You may want to install them separately.
@@ -90,10 +90,18 @@ After adding `ubuntu` plugins in `zsh`, we will have `alias agi="sudo apt-get in
 
 An optional list of missions for `zsh`:
 
--   Change the theme to `Powerlevel9k`
+-   Change the theme to `Powerlevel10k`
 -   Change the font to <span class="underline">Source Code Pro</span>
 -   Install `zsh-syntax-highlighting` plugin
 -   Install `zsh-autosuggestions` plugin
+-   Install `zsh-completion` plugins
+
+```sh
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+```
 
 Read more at: [iTerm2 + Oh My Zsh + Solarized color scheme + Meslo powerline font + Powerlevel9k](https://gist.github.com/kevin-smets/8568070)
 
@@ -105,7 +113,17 @@ Augmented `make`.
 apt install cmake
 ```
 
+### htop
+
+Task monitor.
+
+```sh
+apt install htop
+```
+
 ### tmux
+
+**Deprecared: 2020-01-02. I don't use `tmux` anymore**
 
 A terminal multiplexer. It helps to manage terminal sessions and windows easily. A must have if you work extensively with CLI.
 
@@ -181,12 +199,12 @@ A great Python version management tool. You can easily switch between 2.x and 3.
 After the installation, restart the terminal. **Use `pyenv` to install certain python version**.
 
 ```sh
-pyenv install 3.7.1
+pyenv install 3.8.0
 # wait for a while
 pyenv install 2.7.15
 # wait for a while
-python global 3.7.1
-python -V  # output 3.7.1
+python global 3.8.0
+python -V  # output 3.8.0
 python global 2.7.15
 python -V  # output 2.7.15
 ```
@@ -211,22 +229,24 @@ A language fontend for C and C++.
 [Link](https://clang.llvm.org/).
 
 ```sh
-agi clang-6.0
+agi clang clangd clang-format libclang
 ```
+
+Note: `libclang` is for the `ccls` below.
 
 ### Emacs (Spacemacs)
 
 `Emacs` is the "best" editor after configuration, while `Spacemacs` is **best** editor and IDE, because it is equipped with `evil` (a vim emulator).
 
 ```sh
-apt install emacs25
+apt install emacs
 ```
 
 -   Emacs Configuration
     1.  First `git clone` the `.emacs.d` to `~` directory.
         
         ```sh
-        git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+        git clone -b develop https://github.com/syl20bnr/spacemacs ~/.emacs.d
         ```
     2.  Use symbolic link to create `~/.spacemacs.d` folder. (for my personal use only)
         
@@ -236,9 +256,42 @@ apt install emacs25
         
         (You can put your own Spacemacs configuration in (`~/.spacemacs.d` folder.)
 
+Let Emacs daemon starts at the system boot: [Start Emacs In Ubuntu The Right Way](https://simpleit.rocks/linux/ubuntu/start-emacs-in-ubuntu-the-right-way/).
+
+Change the command executed in the `emacs.desktop`:
+
+`sudo vim /usr/share/applications/emacs26.desktop`, change the "Exec" row.
+
+```sh
+[Desktop Entry]                                                                                           
+Name=Emacs
+GenericName=Text Editor
+Comment=Edit text
+MimeType=text/english;text/plain;text/x-makefile;text/x-c++hdr;text/x-c++src;text/x-chdr;text/x-csrc;text/
+Exec=emacsclient -c -a emacs %F
+Icon=emacs26
+Type=Application
+Terminal=false
+Categories=Development;TextEditor;
+StartupWMClass=Emacs
+Keywords=Text;Editor;
+```
+
+`emacsclient -c -a emacs %F` means it tries `emacsclient` first, it the daemon is not running, it will start emacs GUI.
+
+Some useful alias for Emacs:
+
+```sh
+alias emd="emacs --daemon > /dev/null 2>&1"
+alias emc="LC_CTYPE=zh_CN.UTF-8 emacs &"
+alias emt="emacsclient -t"
+alias emx="emacsclient -c -a emacs &"
+alias semacs="sudo -E emacs -t"
+```
+
 ### svn (Optional)
 
-An old version control software.
+An outdated version control software.
 
 ```sh
 agi subversion
@@ -253,6 +306,24 @@ apt install vim vim-gtk3
 ```
 
 Seems `vim-gtk3` is needed to yank text to system clipboard.
+
+### ccls
+
+Link: [ccls - Github](https://github.com/MaskRay/ccls)
+
+A C/C++ LSP (Language Server Protocol) server, based on `llvm+clang`, for C/C++ development in Spacemacs.
+
+```sh
+git clone --depth=1 --recursive https://github.com/MaskRay/ccls
+cd ccls
+cmake -H. -BRelease -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/path/to/clang+llvm-xxx
+cmake --build Release
+```
+
+You can enable it by **either**:
+
+1.  `sudo cp ccls /usr/local/bin/ccls`
+2.  `export PATH=/path/to/ccls/Release:$PATH`
 
 ### Sublime Text 3
 
@@ -276,7 +347,7 @@ sudo apt-get install sublime-text
     agi texlive-full
     ```
     
-    It has 4.4 GB, so be **patient**. I recommend you install it in the end.
+    It has 5.0+ GB, so be **patient**. I recommend you install it in the end.
 
 -   PDF viewer: `Envice` by default in GNOME.
 
@@ -309,7 +380,11 @@ The packages in ruby:
 
 ### Pinyin input method
 
-1.  fcitx
+1.  Prequisites
+
+    -   Install language package in your settings
+
+2.  fcitx
 
     Follow this [link](https://fcitx-im.org/wiki/Install_(Ubuntu)).
     
@@ -323,13 +398,20 @@ The packages in ruby:
     
     Let `fcitx` start after loging-in. Use `gnome-tweaks-tool` to do so.
 
-2.  Sogou Pinyin Input Method
+3.  Sogou Pinyin Input Method
 
     **Tutorial**: [Sogou Pinyin Official Help](https://pinyin.sogou.com/linux/help.php)
     
     -   Make sure `fcitx` is installed properly.
     -   Enter `im-config` in terminal, set the corresponding items.
     -   Install Sogou Pinyin via the `.deb` package.
+
+4.  Add Sogou Pinyin in `fcitx` configure
+
+    -   Open `fcitx` -> `configure`
+    -   Click `+` button
+    -   Uncheck "Only show current language"
+    -   Find "Sogou pinyin"
 
 ### gtk missing packages
 
@@ -427,6 +509,12 @@ An enhanced status bar for `vim`, `zsh`, `tmux`, etc.
 pip install powerline-status
 ```
 
+### ANGRYsearch
+
+Link: [ANGRYsearch - Github](https://github.com/DoTheEvo/ANGRYsearch)
+
+File searcher. An "Everything" equivalent on Linux.
+
 ## Install via `.deb` file
 
 ### Google Chrome
@@ -464,7 +552,8 @@ Found the corresponding package for the system in the link.
 These packages are installed via `ppa` or downloaded `.tar.gz` files. They are not directly accessible or have multiple steps, so you need to click into the website and follow the instructions out there.
 
 -   [KiCad](http://kicad-pcb.org/download/ubuntu/): an open source schematics and PCB EDA software.
--   [bladeRF](https://github.com/Nuand/bladeRF/wiki/Getting-Started%3A-Linux#easy-installation-for-ubuntu-the-bladerf-ppa): the driver for the bladeRF software-defined radio.
+-   [Sw4STM32](https://www.openstm32.org/System%2BWorkbench%2Bfor%2BSTM32): an IDE based on Eclipse. I use it to compile and download STM32 project.
+-   [bladeRF](https://github.com/Nuand/bladeRF/wiki/Getting-Started%253A-Linux#easy-installation-for-ubuntu-the-bladerf-ppa): the driver for the bladeRF software-defined radio.
 -   [Java SE Runtime Environment](http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html)
     -   Check the installation walkthrough on [WikiHow](https://www.wikihow.com/Install-Oracle-Java-JRE-on-Ubuntu-Linux).
 -   [PyCharm](https://www.jetbrains.com/pycharm/download/#section=linux): one of the best Python IDE.
@@ -472,6 +561,13 @@ These packages are installed via `ppa` or downloaded `.tar.gz` files. They are n
 -   [Zotero](https://www.zotero.org/download/): a document management system. It organizes everything perfectly, especially my paper database.
     -   [Installation guide](https://www.zotero.org/support/installation)
     -   `Zotfile`: [Link](http://zotfile.com/)
+-   [Telegram](https://www.telegram.org)
+-   [Slack](https://www.slack.com)
+-   [VNCViewer](https://www.realvnc.com/en/connect/download/viewer/) and [VNCServer](https://www.realvnc.com/en/connect/download/vnc/)
+-   [GIMP](https://www.gimp.org/)
+-   [Foxit Reader](https://www.foxitsoftware.com/pdf-reader/)
+-   LibreOffice: note the version, make sure you get the latest.
+-   Visual Studio Code: As a Spacemacs user, I usually do not use VS Code.
 
 # Settings
 
