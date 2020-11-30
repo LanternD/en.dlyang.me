@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Mindmap > The NoSQL Exosystem
+title: Mindmap > The NoSQL Ecosystem
 description: My mindmap-based summary of a NoSQL introduction article.
 permalink: /nosql-ecosystem-summary/
 categories: [blog]
