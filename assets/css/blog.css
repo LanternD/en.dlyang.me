@@ -65,6 +65,7 @@
 
 p {
     margin-left: 5px;
+    font-size: 16px;
 }
 
 h1.article-title {font-weight: normal;color: #0f0a42;}
@@ -368,7 +369,7 @@ div.back-top {
     display: block;
     width: 45px;height: 34px;
     border-radius: 4px;
-    position:fixed;right:15px;bottom:20px;
+    position:fixed;right:15px;bottom:85px;
     background-color:#fafafa;
 }
 
@@ -378,7 +379,7 @@ div.back-top {
     display: block;
     height: 89px;
     margin-top: 10px;
-    margin-bottom: 20px; 
+    margin-bottom: 26px; 
     margin-left: 2%
 }
 .pagination .prev, .pagination .next {
@@ -392,6 +393,7 @@ div.back-top {
 .pagination .prev{float: left;}
 .pagination .next{
     float: right;
+    margin-top:10px;
     margin-right: 0%;
 }
 .pagination a:hover{text-decoration:none;}
