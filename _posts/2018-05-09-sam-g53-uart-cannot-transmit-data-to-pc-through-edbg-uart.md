@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ~[DEBUG LOG] SAM G53 Cannot Transmit Data to PC through EDBG UART
+title: DEBUG > SAM G53 Cannot Transmit Data to PC through EDBG UART
 description: A small bug that wastes me an afternoon and a whole night! EDBG is a embedded debug port that helps to debug or depoly the code. It has a virtual serial COM port that can support data communication between MCU and the host PC. I assume that this is known if you are going to read this post.
 permalink: /sam-g53-uart-cannot-transmit-data-to-pc-through-edbg-uart/
 categories: [blog]

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ~[DEBUG LOG] Spacemacs Failed to Initialize After Switching to develop Branch on a Config File Synchronized Machine
+title: DEBUG > Spacemacs Failed to Initialize After Switching to develop Branch on a Config File Synchronized Machine
 description: I know the title is long. But I don't know how to describe my problem clearly. So just read the post. I'm sure generally you find this post by Google, so the title won't bother you.
 permalink: /debug-log-spacemacs-failed-to-initialize-after-switching-to-develop-branch-on-a-config-file-synchronized-machine/
 categories: [blog]

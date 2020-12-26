@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ~[DEBUG LOG] Resolve a Warnning at Spacemacs Start - Open Terminal Failed (Not a Terminal)
+title: DEBUG > Resolve a Warnning at Spacemacs Start - Open Terminal Failed (Not a Terminal)
 description: This is an error when using the combination Spacemacs + Zsh + Tmux.
 permalink: /spacemacs-start-warning-resolve/
 categories: [blog]
