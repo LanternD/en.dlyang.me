@@ -86,9 +86,15 @@ My monitor connects to the HDMI port of the motherboard. I thought the `prime-se
 
 It turned out I deleted the Nvidia drivers after I `prime-select intel`, so I missed the chance to correct it (the command is no longer available).
 
-To get it right, I deleted the blacklist file and reboot, everything works well.
+To get it right, I deleted the blacklist file and run
 
-Btw, I saw the hint in [this discussion thread](https://forums.developer.nvidia.com/t/nvidia-smi-has-failed-because-it-couldnt-communicate-with-the-nvidia-driver/70706/4).
+```shell
+sudo update-initramfs -u
+```
+
+Then reboot, everything works well, `nvidia-smi` back to normal.
+
+Btw, I saw the hint in [this](https://forums.developer.nvidia.com/t/nvidia-smi-has-failed-because-it-couldnt-communicate-with-the-nvidia-driver/70706/4) and [this discussion threads](https://forums.developer.nvidia.com/t/black-screen-after-install-of-nvidia-driver-ubuntu/109312/3).
 
 # Another Note
 
