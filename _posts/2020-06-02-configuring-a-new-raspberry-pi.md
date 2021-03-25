@@ -12,6 +12,27 @@ date: 2020-06-02 16:35:14
 
 Let's get started and setup our new Raspberry Pi!
 
+## Wi-Fi + SSH
+
+By default, Wi-Fi and SSH cannot be enabled without the monitor/keyboard/mouse combo. To activate them without the GUI, do the following:
+
+(I assume the Raspberry Pi OS is already written into the SD card.)
+
+In `boot` folder, create a file named `wpa_supplicant.conf`, with the following content:
+
+```shell
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+network={
+ssid="Your_WiFi_SSID"
+psk="Your_WiFi_password"
+}
+```
+
+Next, in the same folder, create an **empty** file named `SSH`.
+
+That's it. Insert the SD card into the Raspberry Pi, and power it up. It should automatically connect to the Wi-Fi and you can access it with SSH.
+
 ## Whatever config
 
 Use `sudo raspi-config` to configure the basic of the system, including:
@@ -21,6 +42,7 @@ Use `sudo raspi-config` to configure the basic of the system, including:
 -   Audio
 -   Password
 -   Hostname
+-   Locale
 
 This command will be also used in this post.
 
@@ -30,13 +52,14 @@ This command will be also used in this post.
 
 ## Reliable reference
 
-The `bash` / `zsh` history from previous setuped Raspberry Pi, including default user and the `root`.
+As a quicker guide, find the `bash` / `zsh` history from previously already-setuped Raspberry Pi, including default user and the `root`.
 
 # Guideline
 
 Do the following in order:
 
--   Set root password.
+-   `sudo apt update / upgrade`
+-   Set root password: `sudo passwd root` with normal user.
 -   Install vim.
 -   Enable `ssh`.
 -   Install `xrdp`.
@@ -65,7 +88,7 @@ Restart `ssh` service:.
 sudo service ssh restart
 ```
 
-I prefer to allow root login only at the initialization stage. Otherwise, only switch to root from your normal user. Don't allow root login through `ssh`.
+I prefer to allow root login only at the initial setup stage. Otherwise, only switch to root from your normal user. Don't allow root login through `ssh`.
 
 # Enable `xrdp`
 
@@ -95,7 +118,7 @@ pi       tty1         2020-06-02 21:34
 root     pts/0        2020-06-02 21:34
 ```
 
-Stop the services by `pi`:
+Stop the services by user `pi`:
 
 ```shell
 systemctl list-units --type=service --state=running
@@ -112,11 +135,11 @@ pkill -KILL -u pi
 Then follow the description in the referance link above.
 
 ```shell
-usermod -l newusername pi
+usermod -l yournewusername pi
 ls /home  # pi folder
-usermod -m -d /home/newusername newusername
+usermod -m -d /home/yournewusername yournewusername
 ls /home  # changed to 'newusername' folder
-groupmod -n newusername pi  # change group name
+groupmod -n yournewusername pi  # change group name
 ```
 
 Logout and re-login using the new username.
@@ -139,7 +162,7 @@ By default the system will boot to GUI desktop. You can change this to command l
 
 ## Start GUI desktop from command line
 
-Install `Xinit` and run `startx`. See the "Read more" link above.
+Install `Xinit` (`sudo apt install xinit`) and run `startx`. See the "Read more" link above.
 
 # Setup Vim
 
@@ -164,7 +187,19 @@ Follow the link above.
 -   Install dependencies.
 -   Configure and install python. Note that you should use `make altinstall` to avoid overriding the system default python. Otherwise unexpected error could happen.
 
-Note: The whole `make` process takes about 40 minutes to finish on a Raspberry Pi 3B+.
+Note: The whole `make` process takes about 40 minutes to finish on a Raspberry Pi 3B+. (9 minutes on a Raspberry Pi 4B)
+
+## Link New Python
+
+```shell
+ln -s /usr/local/bin/python3.8 /usr/bin/python3.8
+rm python3
+ln -s /usr/bin/python3.8 /usr/bin/python3
+python3 -V  # Have a check
+rm python
+ln -s /usr/bin/python3 /usr/bin/python
+python -V
+```
 
 ## `lsb_release` issue
 
@@ -182,7 +217,28 @@ sudo ln -s /usr/share/pyshared/lsb_release.py /usr/local/lib/python3.9/site-pack
 
 Note: Some packages, like `numpy`, `scipy`, `pillow`, should be installed via `sudo apt-get install`, not `python -m pip install`. Otherwise building dependencies will fail.
 
+```shell
+sudo apt install python-numpy python-scipy python-pil
+```
+
 It can take hours. Be patient.
+
+## Fixing "No module named 'apt\_pkg'
+
+Error message:
+
+```
+Traceback (most recent call last):
+  File "/usr/bin/apt-listchanges", line 30, in <module>
+    import apt_pkg
+ModuleNotFoundError: No module named 'apt_pkg'
+```
+
+Solution:
+
+```shell
+sudo fapt-get install python-apt
+```
 
 # Tips
 
